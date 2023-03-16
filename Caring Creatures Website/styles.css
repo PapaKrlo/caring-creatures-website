@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'MinecraftRegular';
+    src: url('./fonts/MinecraftRegular-Bmg3.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'MinecraftBold';
+    src: url('./fonts/MinecraftBold-nMK1.otf') format('opentype');
+}
+
+:root {
+    --primary-color: #4169E1;
+    --secondary-color: #FF0000;
+    --primary-font: 'MinecraftRegular', sans-serif;
+    --bold-font: 'MinecraftBold', sans-serif;
+}
+
+#gallery .carousel {
+    max-width: 512px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the carousel */
+  }
+
+  #gallery .carousel img {
+    max-height: 512px; /* Adjust the height as needed */
+    object-fit: cover; /* Resize the images while maintaining their aspect ratio */
+  }
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--primary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--bold-font);
+}
+
+.button {
+    background-color: var(--secondary-color);
+}
+
+.retro-border {
+    display: inline-block;
+    padding: 5px;
+    background-color: #212529;
+    box-shadow: inset 0 0 0 5px #212529, inset 0 0 0 10px #fff;
+    border: 5px solid #212529;
+}
+
+.retro-border img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Timer */
+#timer {
+    display: flex;
+    justify-content: center;
+    font-family: 'MinecraftRegular', sans-serif;
+    font-size: 24px;
+}
+  
+#timer > div {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+#timer > div:before {
+    content: attr(data-label);
+    display: block;
+    font-size: 12px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+  
+/* FAQ Section */
+#faq {
+    background-color: #f8f9fa;
+    font-family: 'MinecraftRegular', sans-serif;
+  }
+  
+  #faq h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  #faq .accordion {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  #faq .accordion-item {
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  #faq .accordion-header {
+    font-size: 20px;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+  
+  #faq .accordion-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  
+  #faq .accordion-collapse {
+    background-color: #ffffff;
+  }
+  
+  #faq .accordion-body {
+    font-size: 16px;
+  }

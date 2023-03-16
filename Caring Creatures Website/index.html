@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive NFT Website Template</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+</head>
+<body>
+
+<!-- Header with navigation and mint button -->
+<header class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#">Caring Creatures</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#utility">Utility</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#team">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#roadmap">Roadmap</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+      <button class="btn btn-warning">Mint</button>
+    </div>
+  </div>
+</header>
+
+  <!-- Landing page with text and an image placeholder -->
+  <section class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Welcome to Caring Creatures</h1>
+        <p>Join our community and explore our unique NFT collection.</p>
+        <div id="timer" class="d-flex justify-content-center">
+          <div class="days"></div>
+          <div class="hours"></div>
+          <div class="minutes"></div>
+          <div class="seconds"></div>
+        </div>
+        <br> 
+        <div class="d-flex">
+        <button class="btn btn-warning">Mint Now</button>
+      </div>
+      <br>
+      </div>
+      <div class="col-md-6">
+        <img src="img/04.png" alt="Image placeholder" class="img-fluid retro-border">
+      </div>
+    </div>
+  </section>
+
+  <!-- About section -->
+  <section id="about" class="container mt-5">
+    <h2 class="text-center mb-4">About</h2>
+    <p class="text-center mb-4">
+      Caring Creatures is a community started after researching ways of helping the unhoused community in the UK. 
+      We aim to bring together passionate individuals wanting to make a positive impact in the United Kingdom. With 
+      most of the initial funds raised donated to charities, every NFT purchase helps support those in need. 
+      <br>
+      We would be happy to have you in our community, join the project now :)
+    </p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="container mt-5">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/01.png" class="d-block w-100" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+          <img src="img/02.png" class="d-block w-100" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+          <img src="img/03.png" class="d-block w-100" alt="Image 3">
+        </div>
+        <div class="carousel-item">
+          <img src="img/04.png" class="d-block w-100" alt="Image 3">
+        </div>
+        <div class="carousel-item">
+          <img src="img/05.png" class="d-block w-100" alt="Image 3">
+        </div>
+        <div class="carousel-item">
+          <img src="img/06.png" class="d-block w-100" alt="Image 3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Utility Section -->
+<section id="utility" class="container my-5">
+  <h2 class="text-center mb-4">Utilities</h2>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <img src="utility1.jpg" class="card-img-top" alt="Utility 1">
+        <div class="card-body">
+          <h5 class="card-title">Bid on Unique Art</h5>
+          <p class="card-text">Bid on unique digital artworks crafted by talented artists and curated from 
+            exceptional NFT collections. With every winning bid, you contribute to charitable organisations, blending your 
+            passion for art with a purpose.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="utility2.jpg" class="card-img-top" alt="Utility 2">
+        <div class="card-body">
+          <h5 class="card-title">Online Game Nights</h5>
+          <p class="card-text">Connect with fellow Caring Creatures NFT enthusiasts in fun virtual events like poker nights and chess tournaments. 
+            Compete for exclusive prizes, including Caring Creatures postcards, physical art pieces, and more.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="utility3.jpg" class="card-img-top" alt="Utility 3">
+        <div class="card-body">
+          <h5 class="card-title">Own the Copyright ©️ of Your Caring Creature</h5>
+          <p class="card-text">Unlock endless creative possibilities with full copyright ownership of your Caring Creature. Use it on your short films, illustrations, games, album covers, and more! (T&Cs apply)</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="utility4.jpg" class="card-img-top" alt="Utility 4">
+        <div class="card-body">
+          <h5 class="card-title">Shape the Impact of Caring Creatures</h5>
+          <p class="card-text">You're not just part of a community, but also an essential decision-maker. Every six months, 
+          we hold polls where NFT holders help choose the charities we'll support in the UK.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="container my-5">
+  <h2 class="text-center mb-4">Team</h2>
+  <div class="row">
+    <div class="col-lg-4 mx-auto">
+      <div class="card">
+        <img src="founder.jpg" class="card-img-top" alt="Founder">
+        <div class="card-body">
+          <h5 class="card-title">Founder, Artist, Creator & Visionary</h5>
+          <p class="card-text">The one-man army behind Caring Creatures, dedicated to making a positive impact in the United Kingdom.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Roadmap Section -->
+<section id="roadmap" class="container my-5">
+  <h2 class="text-center mb-4">Roadmap</h2>
+  <p class="text-center mb-4">Our roadmap focuses on the progress of the project and the community's expectations. We aim to bring you exciting events, developments, and milestones as we grow together.</p>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">1. Caring Creatures Release</h5>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">3. Develop the UI for the community to partake in bi-annual elections (at 50% sell-out)</h5>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">5. Big donation to Shelter Homeless Charity (on 100% sell-out)</h5>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">7. Ongoing Poker Nights and Art Auctions</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">2. First Poker Night (after 25% sell-out)</h5>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">4. Start developing the UI where the Art Auctions will take place (at 75% sell-out)</h5>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">6. Host the first digital art auction (1 month after 100% sell-out)</h5>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">8. Elections to choose the next charity we'll donate to (6 months after 100% sell-out)</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ Section -->
+<section id="faq" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+      <!-- Add FAQ items here -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+            What is Caring Creatures?
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Caring Creatures is an NFT collection that aims to make a positive impact in the United Kingdom by supporting various charities. By owning our NFT, you'll have access to exclusive events and benefits while making a difference.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center">
+        <a href="https://discord.gg/yourdiscordlink" target="_blank" class="mx-2">
+          <i class="fab fa-discord fa-2x"></i>
+        </a>
+        <a href="https://twitter.com/yourtwitterhandle" target="_blank" class="mx-2">
+          <i class="fab fa-twitter fa-2x"></i>
+        </a>
+        <a href="https://etherscan.io/address/yourcontractaddress" target="_blank" class="mx-2">
+          <i class="fas fa-search-dollar fa-2x"></i>
+        </a>
+        <a href="https://instagram.com/yourinstagramhandle" target="_blank" class="mx-2">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+        <a href="https://opensea.io/collection/yourcollection" target="_blank" class="mx-2">
+          <i class="fab fa-opensea fa-2x"></i>
+        </a>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-6 d-flex justify-content-center">
+        <img src="your-logo-url.png" alt="Your Collection Logo" width="100" class="mr-2">
+        <p class="mb-0">Made with ❤️ by Carlos L. Emanuele</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+</html>
