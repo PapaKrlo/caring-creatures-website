@@ -21,6 +21,7 @@
   </head>
   <body>
     <!-- Header with navigation and mint button -->
+    <div class="outer">
     <header class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Caring Creatures</a>
@@ -224,7 +225,7 @@
       <h2 class="text-center mb-5">Utilities</h2>
       <div class="row">
         <div class="col-md-3">
-          <div class="card">
+          <div data-aos="flip-up" data-aos-duration="1000" class="card">
             <div class="d-flex justify-content-center align-center mt-5 mb-2">
               <img
                 src="utilities/1.png"
@@ -244,7 +245,7 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card">
+          <div data-aos="flip-up" data-aos-duration="1000" class="card">
             <div class="d-flex justify-content-center align-center mt-5 mb-2">
               <img
                 src="utilities/2.png"
@@ -264,7 +265,7 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card">
+          <div data-aos="flip-up" data-aos-duration="1000" class="card">
             <div class="d-flex justify-content-center align-center mt-5 mb-2">
               <img
                 src="utilities/3.png"
@@ -285,7 +286,7 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card">
+          <div data-aos="flip-up" data-aos-duration="1000" class="card">
             <div class="d-flex justify-content-center align-center mt-5 mb-2">
               <img
                 src="utilities/4.png"
@@ -311,7 +312,7 @@
       <h2 class="text-center mb-4">Team</h2>
       <div class="row">
         <div class="col-lg-4 mx-auto">
-          <div class="card">
+          <div data-aos="fade-right" data-aos-duration="1000" class="card">
             <img src="img/018.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
               <h4 class="card-title">Carlos L. Emanuele</h4>
@@ -324,7 +325,7 @@
           </div>
         </div>
         <div class="col-lg-4 mx-auto">
-          <div class="card">
+          <div data-aos="fade-left" data-aos-duration="1000" class="card">
             <img src="img/022.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
               <h4 class="card-title">Valentina Casteline</h4>
@@ -505,8 +506,9 @@
         </div>
       </div>
     </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </div>
+  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       crossorigin="anonymous"
@@ -519,5 +521,4 @@
     <script>
       AOS.init();
     </script>
-  </body>
 </html>
