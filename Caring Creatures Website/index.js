@@ -1,15 +1,3 @@
-const carousel = document.getElementById('carouselExampleControls');
-const bsCarousel = new bootstrap.Carousel(carousel, { interval: 2000 });
-bsCarousel.pause();
-
-carousel.addEventListener('mouseover', () => {
-  bsCarousel.cycle();
-});
-
-carousel.addEventListener('mouseout', () => {
-  bsCarousel.pause();
-});
-
 function updateTimer() {
     const countdownDate = new Date("2023-04-05T00:00:00").getTime();
     const now = new Date().getTime();

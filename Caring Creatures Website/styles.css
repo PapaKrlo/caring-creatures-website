@@ -1,118 +1,340 @@
 @font-face {
-    font-family: 'MinecraftRegular';
-    src: url('./fonts/MinecraftRegular-Bmg3.otf') format('opentype');
+  font-family: "MinecraftRegular";
+  src: url("./fonts/MinecraftRegular-Bmg3.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'MinecraftBold';
-    src: url('./fonts/MinecraftBold-nMK1.otf') format('opentype');
+  font-family: "MinecraftBold";
+  src: url("./fonts/MinecraftBold-nMK1.otf") format("opentype");
 }
 
 :root {
-    --primary-color: #4169E1;
-    --secondary-color: #FF0000;
-    --primary-font: 'MinecraftRegular', sans-serif;
-    --bold-font: 'MinecraftBold', sans-serif;
+  --primary-color: #4169e1;
+  --secondary-color: #ff0000;
+  --primary-font: "MinecraftRegular", sans-serif;
+  --bold-font: "MinecraftBold", sans-serif;
 }
 
 #gallery .carousel {
-    max-width: 512px; /* Adjust the width as needed */
-    margin: 0 auto; /* Center the carousel */
-  }
-
-  #gallery .carousel img {
-    max-height: 512px; /* Adjust the height as needed */
-    object-fit: cover; /* Resize the images while maintaining their aspect ratio */
-  }
-
-body {
-    font-family: var(--primary-font);
-    background-color: var(--primary-color);
+  max-width: 512px; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the carousel */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--bold-font);
+#gallery .carousel img {
+  max-height: 512px; /* Adjust the height as needed */
+  object-fit: cover; /* Resize the images while maintaining their aspect ratio */
+}
+
+body {
+  font-family: var(--primary-font);
+  background-color: var(--primary-color);
+}
+.navbar {
+  background-color: var(--primary-color);
+}
+h1 {
+  font-size: 3.5rem;
+  color: #f18805;
+}
+h2 {
+  font-size: 2.5rem;
+  color: #f5e9e2;
+}
+p {
+  font-size: 1.5rem;
+  color: #f5e9e2;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--bold-font);
 }
 
 .button {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
+.greeting {
+  margin-top: 75px;
+}
+
+.main-image {
+  width: 85%;
+  height: 85%;
+}
+
+.mint-button {
+  background-color: #f18805;
+  width: 200px;
+  height: 65px;
+}
+.mint-button-sm {
+  background-color: #f18805;
+}
+
+#utility .card {
+  background-color: #4169e1;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+#utility {
+  background-color: #0b0014;
+}
 .retro-border {
-    display: inline-block;
-    padding: 5px;
-    background-color: #212529;
-    box-shadow: inset 0 0 0 5px #212529, inset 0 0 0 10px #fff;
-    border: 5px solid #212529;
+  display: inline-block;
+  padding: 5px;
+  background-color: #212529;
+  box-shadow: inset 0 0 0 5px #212529, inset 0 0 0 10px #fff;
+  border: 5px solid #212529;
+}
+.my-section {
+  margin: 0;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-left: 160px;
+  padding-right: 180px;
+  background-color: #d95d39;
+}
+.my-section-animate {
+  margin: 0;
+  padding-left: 160px;
+  padding-right: 180px;
+  background-color: #d95d39;
+}
+#about {
+  background-color: #0b0014;
+}
+.my-section-greeting {
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  padding-left: 160px;
+  padding-right: 80px;
+  background-color: #0b0014;
+}
+.my-section-utility {
+  margin: 0;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
+.left-content {
+  padding-top: 0px;
+  padding-right: 30px;
+}
+
+.uk {
+  width: 45%;
+}
+.container {
+  width: 100%;
+}
 .retro-border img {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
+/* Gallery */
+.sec {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.a1 {
+  display: flex;
+  width: 200%;
+  animation: bannermove 20s linear infinite;
+}
+
+.a2 {
+  display: flex;
+  width: 200%;
+  animation: bannermoveLeft 20s linear infinite;
+}
+@keyframes bannermove {
+  to {
+    transform: translateX(0);
+  }
+  from {
+    transform: translateX(-50%);
+  }
+}
+@keyframes bannermoveLeft {
+  to {
+    transform: translateX(-50%);
+  }
+  from {
+    transform: translateX(0);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .sec {
+    width: 250%;
+  }
+
+  .a2 {
+    display: none;
+  }
+}
+
+.ul {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.liEx {
+  width: 100%;
+  margin-left: 10px;
+}
 /* Timer */
 #timer {
-    display: flex;
-    justify-content: center;
-    font-family: 'MinecraftRegular', sans-serif;
-    font-size: 24px;
+  display: flex;
+  justify-content: center;
+  font-family: "MinecraftRegular", sans-serif;
+  font-size: 24px;
 }
-  
+
 #timer > div {
-    margin: 0 10px;
-    padding: 10px 20px;
-    background-color: #f8f9fa;
-    border: 2px solid #007bff;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #f5e9e2;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-  
+
 #timer > div:before {
-    content: attr(data-label);
-    display: block;
-    font-size: 12px;
-    margin-bottom: 4px;
-    text-transform: uppercase;
+  content: attr(data-label);
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
 }
-  
+
+#animate {
+  background-color: #0b0014;
+}
+.image-container {
+}
+
 /* FAQ Section */
 #faq {
-    background-color: #f8f9fa;
-    font-family: 'MinecraftRegular', sans-serif;
-  }
-  
-  #faq h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-  }
-  
-  #faq .accordion {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  #faq .accordion-item {
-    border-bottom: 1px solid #dee2e6;
-  }
-  
-  #faq .accordion-header {
-    font-size: 20px;
-    background-color: #ffffff;
-    cursor: pointer;
-  }
-  
-  #faq .accordion-button {
-    display: block;
+  background-color: var(--primary-color);
+  font-family: "MinecraftRegular", sans-serif;
+}
+
+#faq h2 {
+  font-size: 36px;
+  color: #0b0014;
+  margin-bottom: 30px;
+}
+
+#faq .accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#faq .accordion-item {
+  border-bottom: 1px solid #dee2e6;
+}
+
+#faq .accordion-header {
+  font-size: 20px;
+  background-color: #f5e9e2;
+  cursor: pointer;
+}
+
+#faq .accordion-button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+#faq .accordion-collapse {
+  background-color: #ffffff;
+}
+
+#faq .accordion-body {
+  font-size: 16px;
+}
+#utility p {
+  font-size: 1.1rem;
+}
+#utility h5 {
+  color: #f5e9e2;
+}
+#utility .card-img-top {
+  width: 45%;
+  border-radius: 20px;
+}
+#team {
+  background-color: var(--primary-color);
+}
+#team .card {
+  background-color: #f18805;
+  color: #0b0014;
+  height: 600px;
+}
+#team p {
+  font-size: 1.2rem;
+  color: #0b0014;
+}
+#roadmap {
+  background-color: #0b0014;
+}
+#roadmap .card {
+  background-color: #f5e9e2;
+  background-color: #f18805;
+  color: #0b0014;
+}
+@media only screen and (max-width: 767px) {
+  img {
     width: 100%;
-    text-align: left;
+    height: auto;
   }
-  
-  #faq .accordion-collapse {
-    background-color: #ffffff;
+  .my-section {
+    padding-left: 10px;
+    padding-right: 10px;
   }
-  
-  #faq .accordion-body {
-    font-size: 16px;
+  .my-section-greeting {
+    padding-left: 10px;
+    padding-right: 10px;
   }
+  .my-section-animate {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .my-section-utility {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  section {
+    width: 100%;
+    padding: 0;
+  }
+  .sec {
+    display: none;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  #timer {
+    display: grid !important;
+  }
+  .main-image{
+    width: 100%;
+    height: auto;
+  }
+  .mint-button-mobile{
+    justify-content: center;
+  }
+}
