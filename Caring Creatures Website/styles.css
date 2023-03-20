@@ -7,14 +7,16 @@
   font-family: "MinecraftBold";
   src: url("./fonts/MinecraftBold-nMK1.otf") format("opentype");
 }
-
+@font-face {
+  font-family: "ProfontWindows";
+  src: url("./fonts/Profontwindows-axBMx.ttf") format("opentype");
+}
 :root {
-  --primary-color: #4169e1;
+  --primary-color: #43AA8B;
   --secondary-color: #ff0000;
   --primary-font: "MinecraftRegular", sans-serif;
   --bold-font: "MinecraftBold", sans-serif;
 }
-
 #gallery .carousel {
   max-width: 512px; /* Adjust the width as needed */
   margin: 0 auto; /* Center the carousel */
@@ -27,20 +29,25 @@
 
 body {
   font-family: var(--primary-font);
-  background-color: var(--primary-color);
+  background-color: #0b0014;
 }
+/* .container-mintpg{
+  background-color: var(--primary-color);
+} */
 .navbar {
   background-color: var(--primary-color);
 }
 h1 {
   font-size: 3.5rem;
-  color: #f18805;
+  color: #f5e9e2;
 }
 h2 {
   font-size: 2.5rem;
   color: #f5e9e2;
+  color: #0b0014;
 }
 p {
+  font-family: "ProfontWindows";
   font-size: 1.5rem;
   color: #f5e9e2;
 }
@@ -51,6 +58,7 @@ h4,
 h5,
 h6 {
   font-family: var(--bold-font);
+
 }
 
 .button {
@@ -62,21 +70,33 @@ h6 {
 }
 
 .main-image {
-  width: 85%;
-  height: 85%;
-}
 
+  width: 70%;
+  height: max-content;
+}
+.mint-button-wrapper{
+  cursor: not-allowed;
+
+}
 .mint-button {
+  pointer-events: none !important;
+
   background-color: #f18805;
+  font-size: large;
   width: 200px;
   height: 65px;
 }
+.mint-button:hover {
+  background-color: #f9a744;
+}
 .mint-button-sm {
+  pointer-events: none !important;
   background-color: #f18805;
 }
 
 #utility .card {
   background-color: #4169e1;
+  background-color: var(--primary-color);
   border-radius: 20px;
   margin-top: 20px;
 }
@@ -102,18 +122,25 @@ h6 {
   margin: 0;
   padding-left: 160px;
   padding-right: 180px;
+  padding-bottom: 130px;
   background-color: #d95d39;
 }
 #about {
   background-color: #0b0014;
+  background-color: var(--primary-color);
+}
+h4{
+  color: #f5e9e2;
 }
 .my-section-greeting {
   margin: 0;
-  padding-top: 30px;
+  padding-top: 110px;
   padding-bottom: 100px;
   padding-left: 160px;
   padding-right: 80px;
   background-color: #0b0014;
+  /* background-image: url(img/bg.png);
+  background-repeat: repeat-x; */
 }
 .my-section-utility {
   margin: 0;
@@ -129,7 +156,8 @@ h6 {
 }
 
 .uk {
-  width: 45%;
+  width: 70%;
+  height: auto;
 }
 .container {
   width: 100%;
@@ -139,7 +167,15 @@ h6 {
   width: 100%;
   height: auto;
 }
-
+#roadmap h2{
+  color: #f5e9e2;
+}
+footer img{
+  width: 40px;
+}
+footer h2{
+  color: #f5e9e2;
+}
 /* Gallery */
 .sec {
   width: 100%;
@@ -219,9 +255,21 @@ h6 {
   margin-bottom: 4px;
   text-transform: uppercase;
 }
+.roadmap-mob{
+  display: none;
+}
+.roadmap-des{
+  display: block;
+}
 
 #animate {
   background-color: #0b0014;
+}
+#animate h2{
+  color: #f18805;
+}
+.animate-image{
+  margin-right: 100px;
 }
 
 /* FAQ Section */
@@ -230,7 +278,7 @@ h6 {
   font-family: "MinecraftRegular", sans-serif;
 }
 
-#faq h2 {
+#faq #faq-title {
   font-size: 36px;
   color: #0b0014;
   margin-bottom: 30px;
@@ -270,6 +318,9 @@ h6 {
 #utility h5 {
   color: #f5e9e2;
 }
+#utility h2{
+  color: #f5e9e2;
+}
 #utility .card-img-top {
   width: 45%;
   border-radius: 20px;
@@ -280,7 +331,6 @@ h6 {
 #team .card {
   background-color: #f18805;
   color: #0b0014;
-  height: 600px;
 }
 #team p {
   font-size: 1.2rem;
@@ -294,11 +344,22 @@ h6 {
   background-color: #f18805;
   color: #0b0014;
 }
-@media only screen and (max-width: 767px) {
-  body{
+.welcome{
+  font-family: "ProfontWindows";
+  color: #f18805;
+}
+body {
+  overflow-x: hidden;
+}
+.outer {
+  overflow-x: hidden;
+  width: 100%;
+}
+@media only screen and (max-width: 1130px) {
+  body {
     overflow-x: hidden;
   }
-  .outer{
+  .outer {
     overflow-x: hidden;
     width: 100%;
   }
@@ -307,18 +368,50 @@ h6 {
     height: auto;
   }
   .my-section {
+    padding-top: 50px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 50px;
+
+  }
+  .left-content{
+    padding-right: 10px;
   }
   .my-section-greeting {
+    display: flex;
+    justify-content: center!important;
+    padding-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
   }
+  .my-section-greeting .row{
+    display: flex;
+    justify-content: center;
+  }
+  .greeting p{
+   font-size: 1.2rem;
+  }
+  .greeting h3{
+    font-size: 1.2rem;
+   }
   .my-section-animate {
     padding-left: 10px;
     padding-right: 10px;
   }
+  #animate h2{
+    font-size: large;
+  }
+  #animate h4{
+    font-size: small;
+  }
+  .animate-image{
+    margin-right: 30px;
+  }
+  #about p{
+    font-size: large;
+  }
   .my-section-utility {
+    padding-top: 50px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -334,12 +427,35 @@ h6 {
   }
   #timer {
     display: grid !important;
+    justify-content: center!important;
+    font-size: medium;
   }
-  .main-image{
-    width: 100%;
+  #timer > div {
+    margin-right: 10px;
+    padding: 3px;
+    background-color: #f5e9e2;
+  }
+  .main-image {
+    width: 90%;
     height: auto;
   }
-  .mint-button-mobile{
+  .mint-button-mobile {
+    margin-top: 20px!important;
     justify-content: center;
   }
+  .mint-button{
+   
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 80%;
+    height: fit-content;
+  }
+  .roadmap-mob{
+    display: block;
+  }
+  .roadmap-des{
+    display: none;
+  }
 }
+
+/* Glitching */
