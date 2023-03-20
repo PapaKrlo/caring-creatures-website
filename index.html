@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive NFT Website Template</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js%22%3E"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+  </head>
+  <body>
+    <!-- Header with navigation and mint button -->
+    <div class="outer">
+      <header class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Caring Creatures</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#utility">Utility</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#roadmap">Roadmap</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#faq">FAQ</a>
+              </li>
+            </ul>
+            <div class="mint-button-wrapper"><button class="btn mint-button-sm">Mint</button></div>
+            
+          </div>
+        </div>
+      </header>
+
+      <!-- Landing page with text and an image placeholder -->
+      <section class="my-section-greeting">
+        <div class="row">
+          <div class="col-md-6 greeting left-content">
+            <h3 class="welcome">Help us make a caring Kingdom.</h3>
+            <h1>CARING CREATURES</h1>
+            <p>Join our philantropic community and explore our goals!</p>
+            <div id="timer" class="d-flex justify-content-start mt-3">
+              <div class="days"></div>
+              <div class="hours"></div>
+              <div class="minutes"></div>
+              <div class="seconds"></div>
+            </div>
+            <br />
+            <div class="d-flex mint-button-mobile mt-5 mint-button-wrapper">
+              <button class="btn mint-button">Mint</button>
+            </div>
+            <br />
+          </div>
+          <div
+            class="col-md-6 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="img/013.png"
+              alt="Image placeholder"
+              class="img-fluid main-image"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="animate" class="my-section-animate">
+        <div class="image-container d-flex align-items-center">
+          <img
+            data-aos="zoom-out"
+            data-aos-duration="1000"
+            class="animate-image img-fluid w-25"
+            src="img/4wobg.png"
+          />
+          <div data-aos="fade-left" data-aos-duration="1000">
+            <h2>
+              Goal # 1: Donate £100,000 to a charity in the UK
+            </h2>
+            <h4>
+              We will donate £100,000 to a reputable charity organisation working to address homelessness 
+              in the United Kingdom. This will be achieved by selling our profile picture NFT collection.
+
+            </h4>
+          </div>
+        </div>
+        <div
+          class="image-container d-flex justify-content-center align-items-center"
+        >
+          <img
+            data-aos="zoom-out"
+            data-aos-duration="1000"
+            class="animate-image img-fluid w-25"
+            src="img/2wobg.png"
+          />
+          <div data-aos="fade-left" data-aos-duration="1000">
+            <h2>
+              Goal # 2: Provide sustained support for charities
+            </h2>
+            <h4>
+              After our initial donation, we will continue to support different charitable causes 
+              by giving them exposure within our community and social media channels. We will also 
+              keep contributing financially with funds raised from OpenSea royalties, game nights, 
+              digital auctions, and more.
+
+            </h4>
+          </div>
+        </div>
+        <div
+          class="image-container d-flex justify-content-end align-items-center"
+        >
+          <img
+            data-aos="zoom-out"
+            data-aos-duration="1000"
+            class="animate-image img-fluid w-25"
+            src="img/3wobg.png"
+          />
+          <div data-aos="fade-left" data-aos-duration="1000">
+            <h2>
+              Goal # 3: Create a community you feel proud to belong to ❤
+            </h2>
+            <h4>
+              Bring together altruistic individuals that enjoy the idea of constantly 
+              supporting charities and improving the world. Allow everyone to have a good time, 
+              while also providing a community to express creativity and ideas to tackle real issues.
+
+            </h4>
+          </div>
+        </div>
+      </section>
+      <!-- About section -->
+      <section id="about" class="my-section">
+        <h2 class="text-center mb-5">ABOUT</h2>
+        <div class="row">
+          <div
+            class="col-md-6 d-flex justify-content-center align-items-center"
+          >
+            <p class="mb-4">
+              Caring Creatures is a community started after researching ways of
+              helping the unhoused community in the UK. We aim to bring together
+              passionate individuals wanting to make a positive impact in the
+              United Kingdom. With most of the initial funds raised donated to
+              charities, every NFT purchase helps support those in need.
+              <br /><br />
+              We allow our holders to decide which charities we'll be supporting across a variety 
+              of realms. After successfully donating to our initial cause, we are able to pivot to other 
+              charities such as Macmillan Cancer Support, British Heart Foundation, Alzheimer's Society, 
+              Children in Need, Dementia UK, and more! 
+              <br> <br>
+              We would be happy to have you in our community, join the project
+              now :)
+            </p>
+          </div>
+          <div class="col-md-6 d-flex justify-content-center">
+            <img
+              src="img/uk-collage.jpg"
+              alt="Image placeholder"
+              class="uk img-fluid"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="tf-section sec">
+        <article class="a1 mt-5">
+          <div class="w-100">
+            <ul class="ul">
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/01.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/02.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/03.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/04.png" />
+              </li>
+            </ul>
+          </div>
+          <div class="w-100">
+            <ul class="ul">
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/05.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/06.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/07.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/08.png" />
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article class="a2 mt-5">
+          <div class="w-100">
+            <ul class="ul">
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/09.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/010.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/011.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/012.png" />
+              </li>
+            </ul>
+          </div>
+          <div class="w-100">
+            <ul class="ul">
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/013.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/014.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/015.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/016.png" />
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- Utility Section -->
+      <section id="utility" class="my-section-utility">
+        <h2 class="text-center mb-5">UTILITY</h2>
+        <div class="row">
+          <div class="col-md-3">
+            <div data-aos="flip-up" data-aos-duration="1000" class="card">
+              <div class="d-flex justify-content-center align-center mt-5 mb-2">
+                <img
+                  src="utilities/4.png"
+                  class="card-img-top "
+                  alt="Utility 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Bid on Unique Art</h5>
+                <p class="card-text">
+                  Bid on one-of-a-kind digital art pieces made by artists and creatives, 
+                  all the way up to large NFT collection pieces that are donated, obtained 
+                  through a collaboration, or purchased at a convenient price. 
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div data-aos="flip-up" data-aos-duration="1000" class="card">
+              <div class="d-flex justify-content-center align-center mt-5 mb-2">
+                <img
+                  src="utilities/1.png"
+                  class="card-img-top"
+                  alt="Utility 2"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Online Game Nights</h5>
+                <p class="card-text">
+                  Connect with fellow Caring Creatures holders in fun
+                  virtual events like poker nights and chess tournaments.
+                  Compete for exclusive prizes, including Caring Creatures
+                  postcards, physical art pieces, and more.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div data-aos="flip-up" data-aos-duration="1000" class="card">
+              <div class="d-flex justify-content-center align-center mt-5 mb-2">
+                <img
+                  src="utilities/2.png"
+                  class="card-img-top"
+                  alt="Utility 3"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">
+                  Own the Copyright ©️ of Your Caring Creature
+                </h5>
+                <p class="card-text">
+                  Unlock endless creative possibilities with full copyright
+                  ownership of your Caring Creature. Use it on your short films,
+                  illustrations, games, album covers, and more! (T&Cs apply)
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div data-aos="flip-up" data-aos-duration="1000" class="card">
+              <div class="d-flex justify-content-center align-center mt-5 mb-2">
+                <img
+                  src="utilities/3.png"
+                  class="card-img-top"
+                  alt="Utility 4"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Shape the Impact of Caring Creatures</h5>
+                <p class="card-text">
+                  When you hold at least one of our NFTs, you become an essential
+                  decision-maker for the project. Every six months, we hold democratic elections where our
+                  holders decide on the charities we'll support.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section id="team" class="mb-0 my-section">
+        <h2 class="text-center mb-4">TEAM</h2>
+        <div class="row">
+          <div class="col-lg-4 mx-auto">
+            <div data-aos="fade-right" data-aos-duration="1000" class="card">
+              <img src="img/018.png" class="card-img-top" alt="Founder" />
+              <div class="card-body">
+                <h4 class="card-title">Carlos L. Emanuele</h4>
+                <h5 class="card-title">Founder, Artist & SC Dev</h5>
+                <p class="card-text">
+                  Creator of the collection. Dean's List final year student at UWE Bristol. 
+                  Computer Science and Design
+                  background, with a passion for using technology as a way
+                  of solving problems.
+                </p>
+                <a target="_blank" href="https://www.linkedin.com/in/carlos-leonardo-emanuele-borja-466446179/"><img style="width: 30px;" src="icons/linkedin-icon.png"></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mx-auto">
+            <div data-aos="fade-left" data-aos-duration="1000" class="card">
+              <img src="img/022.png" class="card-img-top" alt="Founder" />
+              <div class="card-body">
+                <h4 class="card-title">Valentina Casteline</h4>
+                <h5 class="card-title">Web Developer</h5>
+                <p class="card-text">
+                  Web developer for this site. Full-stack developer in NYC.
+                  Computer Science and Design
+                  background, waiting to develop further integrations for this project as it advances, and help those in need.
+                </p>
+                <a target="_blank" href="https://www.linkedin.com/in/valentina-casteline-7a9126192/"><img style="width: 30px;" src="icons/linkedin-icon.png"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roadmap Section -->
+      <section id="roadmap" class="my-section">
+        <h2 class="text-center mb-4">ROADMAP</h2>
+        <p class="text-center mb-4">
+          Our roadmap focuses on showing what we'll deliver after the initial release of the project. We aim to bring you 
+          more exciting events, developments, and milestones as we grow together past sellout. 
+        </p>
+        <div class="d-flex justify-content-center">
+          <img class="roadmap-des" src="img/roadmap.png" />
+        </div>
+        <div class="d-flex justify-content-center">
+          <img class="roadmap-mob" src="img/roadmapM.png" />        
+        </div>
+        
+
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="my-section">
+        <div class="container">
+          <h2 class="text-center mb-4">FREQUENTLY ASKED QUESTIONS</h2>
+          <div class="accordion" id="faqAccordion">
+            <!-- Add FAQ items here -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading1">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse1"
+                  aria-expanded="false"
+                  aria-controls="collapse1"
+                >
+                  How much will each Caring Creatures cost?
+                </button>
+              </h2>
+              <div
+                id="collapse1"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading1"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  We'll let you decide that! In the same way that you can choose how much
+                  you want to donate to a charity, you can choose how much to pay for your
+                  Caring Creature. The range in our mint website goes from 0.01 ETH to 0.1 ETH, which 
+                  at the time of this reply is a range from £14,39 to £143,9. 
+                </div>
+              </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading1">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse1"
+                  aria-expanded="false"
+                  aria-controls="collapse1"
+                >
+                  How many Caring Creatures can I mint per wallet?
+                </button>
+              </h2>
+              <div
+                id="collapse1"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading1"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  You can mint up to 50 Caring Creatures per wallet :)
+                </div>
+              </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading1">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse1"
+                  aria-expanded="false"
+                  aria-controls="collapse1"
+                >
+                  What can I use my Caring Creature image for?
+                </button>
+              </h2>
+              <div
+                id="collapse1"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading1"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  You can use it for personal and commercial purposes. These include but are not limited to
+                   short films, food trucks, illustrations, games, album covers, and more.
+                  <br><br>
+                   Please read our full terms and conditions to clear any doubt. If you still have a doubt
+                   after reading them, raise a ticket in our discord server, we'll be happy to help :)
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading1">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse1"
+                    aria-expanded="false"
+                    aria-controls="collapse1"
+                  >
+                    If I have one Caring Creature NFT, how many votes do I get in the biannual elections?
+                  </button>
+                </h2>
+                <div
+                  id="collapse1"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading1"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    For every Caring Creature you get a vote. This means that if you have one Caring Creature NFT,
+                    you have one vote. If you were to have five Caring Creatures, you would have five votes. 
+                  </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading1">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse1"
+                  aria-expanded="false"
+                  aria-controls="collapse1"
+                >
+                  What games will be played in the Game Nights?
+                </button>
+              </h2>
+              <div
+                id="collapse1"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading1"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  The community decides! If everyone wants to play Catan,
+                  we'll do a Catan tournament. If everyone wants to play chess,
+                  we'll do a chess tournament. We are always happy to organise 
+                  what the majority wants. 
+                  <br> <br> 
+                  There will be prizes in every game night, regardless of what we play :)
+                </div>
+              </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading1">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse1"
+                aria-expanded="false"
+                aria-controls="collapse1"
+              >
+                How much does it cost to participate in the Game Nights?
+              </button>
+            </h2>
+            <div
+              id="collapse1"
+              class="accordion-collapse collapse"
+              aria-labelledby="heading1"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                For our holders it is free to play, however voluntary contributions
+                are accepted as this is one of the ways we fund our goals. 
+                <br><br>
+                Non-holders will have to pay an entrance fee for the tournament in which
+                they would like to participate. 
+              </div>
+            </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="bg-dark text-white py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+              <a
+                href="https://discord.gg/yourdiscordlink"
+                target="_blank"
+                class="mx-2"
+              >
+                <img src="icons/discord-icon.png" />
+              </a>
+              <a
+                href="https://twitter.com/yourtwitterhandle"
+                target="_blank"
+                class="mx-2"
+              >
+                <img src="icons/twitter_icon.png" />
+              </a>
+              <a
+                href="https://etherscan.io/address/yourcontractaddress"
+                target="_blank"
+                class="mx-2"
+              >
+                <img src="icons/etherscan-icon.png" />
+              </a>
+              <a
+                href="https://instagram.com/yourinstagramhandle"
+                target="_blank"
+                class="mx-2"
+              >
+                <img src="icons/opensea-icon.png" />
+              </a>
+              <a
+                href="https://opensea.io/collection/yourcollection"
+                target="_blank"
+                class="mx-2"
+              >
+                <img src="icons/instagram-icon.png" />
+              </a>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-md-6 d-flex justify-content-center">
+              <div>
+                <h2>CARING CREATURES</h2>
+                <p>help us make a caring Kingdom.</p>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+              <a href="" class="mb-0"> Terms and Conditions</a>
+            </div>
+            <!-- <div class="col-md-6 d-flex justify-content-center">
+            </div> -->
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <!-- <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    crossorigin="anonymous"
+  ></script> -->
+  <!-- <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script> -->
+  <script src="index.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</html>
