@@ -62,7 +62,6 @@ h6 {
 .wrapper-utils {
   color: #f5e9e2;
   display: grid;
-  display: grid;
   grid-auto-columns: 1fr;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
@@ -141,16 +140,6 @@ h6 {
   background-color: #f18805;
 }
 
-#utility .card {
-  background-color: #4169e1;
-  background-color: var(--primary-color);
-  border: 2px solid #f5e9e2;
-  border-radius: 20px;
-  margin-top: 20px;
-}
-#utility {
-  background-color: #0b0014;
-}
 .retro-border {
   display: inline-block;
   padding: 5px;
@@ -165,6 +154,13 @@ h6 {
   padding-left: 160px;
   padding-right: 180px;
   background-color: #d95d39;
+}
+.my-section-team {
+  margin: 0;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .my-section-about {
   padding-top: 150px;
@@ -339,6 +335,13 @@ footer h2 {
 #animate {
   background-color: #0b0014;
 }
+#animate h5{
+  color: #f5e9e2;
+  line-height: 1.7;
+}
+/* #animate h5{
+  font-family: "MinecraftRegular";
+} */
 #animate h2 {
   color: #f18805;
 }
@@ -388,19 +391,7 @@ footer h2 {
 #faq .accordion-body {
   font-size: 16px;
 }
-#utility p {
-  font-size: 1.1rem;
-}
-#utility h5 {
-  color: #f5e9e2;
-}
-#utility h2 {
-  color: #f5e9e2;
-}
-#utility .card-img-top {
-  width: 45%;
-  border-radius: 20px;
-}
+
 #team {
   background-color: var(--primary-color);
   overflow-x: hidden;
@@ -430,16 +421,25 @@ footer h2 {
   font-family: "ProfontWindows";
   color: #f18805;
 }
-.greeting h1 {
-  color: #9cc2e8;
-}
 .outer {
   width: 100%;
 }
 #about p {
   color: #f5e9e2;
 }
+.sub{
+  font-size: 1.4rem!important;
+}
+.uti{
+  display: none;
+}
+#faq p{
+ font-size: 1.1rem;
+}
 @media only screen and (max-width: 1130px) {
+  .sub{
+    font-size: 1rem!important;
+  }
   .wrapper-utils {
     margin-left: 0;
     margin-right: 0px;
@@ -459,6 +459,12 @@ footer h2 {
     height: auto;
   }
   .my-section {
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+  }
+  .my-section-team{
     padding-top: 50px;
     padding-left: 20px;
     padding-right: 20px;
@@ -498,6 +504,7 @@ footer h2 {
   #animate {
     overflow-x: hidden;
   }
+ 
   #animate h2 {
     font-size: large;
   }
@@ -559,12 +566,32 @@ footer h2 {
     margin-top: 20px;
   }
 }
-@media only screen and (max-width: 412px) {
+@media only screen and (max-width: 415px) {
   .left-panel {
     margin-left: 17px;
   }
+  .wrapper-utils {
+    display: block;
+    padding-left: 40px;
+    padding-right: 40px;
+
+  }
+  .uti{
+    display: block;
+  }
+  .left{
+    display: none;
+  }
   .wrapper-utils p {
     font-size: medium;
+  }
+  .greeting{
+    margin-top: 30px;
+  }
+}
+@media only screen and (min-width: 575px) and (max-width: 1000px) {
+  #team .card{
+    margin: 0!important;
   }
 }
 

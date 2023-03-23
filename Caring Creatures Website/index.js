@@ -1,5 +1,5 @@
 function updateTimer() {
-  const countdownDate = new Date("2023-04-05T00:00:00").getTime();
+  const countdownDate = new Date("2023-04-12T00:00:00").getTime();
   const now = new Date().getTime();
   const distance = countdownDate - now;
 
