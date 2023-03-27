@@ -14,7 +14,7 @@
 :root {
   --primary-color: #2d4a60;
   --secondary-color: #ff0000;
-  --primary-font: "MinecraftRegular", sans-serif;
+  --primary-font: "MinecraftRegular", sans-serif, "ProfontWindows";
   --bold-font: "MinecraftBold", sans-serif;
 }
 #gallery .carousel {
@@ -31,8 +31,34 @@ body {
   font-family: var(--primary-font);
   background-color: #0b0014;
 }
+#btt-button{
+ 
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #2d4a60; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    border: 2px solid #f5e9e2;
+}
+#btt-button:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
 .navbar {
   background-color: var(--primary-color);
+}
+.navbar img {
+  width: 35px;
+}
+.socials-nav{
+  display: flex;
 }
 h1 {
   font-size: 3.5rem;
@@ -566,7 +592,77 @@ footer h2 {
     margin-top: 20px;
   }
 }
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+.floating {
+	transform: translatey(0px);
+	animation: float 3s ease-in-out infinite;
+}
+.border-blue{
+  background-color: #526DFE;
+  border-color: #526DFE!important;
+}
+.border-pink{
+  background-color: #DAB5FE;
+  border-color: #DAB5FE!important;
+}
+.border-red{
+  background-color: #FD5555;
+  border-color:#FD5555!important;
+}
+.border-yellow{
+  background-color: #FEF49D;
+  border-color: #FEF49D!important;
+}
+.arrow{
+  height: 150px;
+}
+.pink{
+  color: #DAB5FE
+}
+.blue{
+  color:#526DFE;
+}
+.white{
+  color: #F5E8E2;
+}
+.yellow{
+  color: #FEF49D;
+}
+.red{
+  color:#FD5555
+}
+.tag{
+  transition: all ease-in-out;  
+  margin-left: 8px;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  font-size: 0px;
+  }
+.tag-open{
+  margin-left: 8px;
+  border-radius: 20px;
+  transition: all .2s ease-in-out;  
+  font-size: 15px;
+  width: fit-content;
+  height: fit-content;
+}
+
 @media only screen and (max-width: 415px) {
+  .socials-nav{
+    display: none;
+  }
   .left-panel {
     margin-left: 17px;
   }

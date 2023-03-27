@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Caring Creatures</title>
-    <link rel="icon" type="image/x-icon" href="img/3.png">
+    <link rel="icon" type="image/x-icon" href="img/3.png" />
 
     <link
       rel="stylesheet"
@@ -22,13 +22,37 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+   
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script> -->
+
+    <!-- react-vis -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/react-vis/dist/style.css">
+    <script type="text/javascript" src="https://unpkg.com/react-vis/dist/dist.min.js"></script> -->
+
+    <script src="echarts.js"></script>
+    
+    <!-- <script type="text/babel">
+        
+        const {
+          XYPlot,
+          RadialChart
+        } = reactVis;
+       
+        const data = [{angle: 7, label:"Charity Donation"}, {angle: 1.5, label: 'Project Development'}, {angle: 1.5, label: 'Costs and Salaries'} ]
+        const radial = <RadialChart width={400} height={400} data={data} showLabels/>
+        ReactDOM.render(radial, document.getElementById('pie'));
+    </script> -->
   </head>
   <body>
     <!-- Header with navigation and mint button -->
     <div class="outer">
       <header class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="#"><h4 style="margin: 0!important;">CARING CREATURES</h4></a>
+          <a class="navbar-brand" href="#"
+            ><h4 style="margin: 0 !important">CARING CREATURES</h4></a
+          >
           <button
             class="navbar-toggler"
             type="button"
@@ -42,6 +66,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#animate">Goals</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#about">About</a>
               </li>
@@ -58,13 +85,50 @@
                 <a class="nav-link" href="#faq">FAQ</a>
               </li>
             </ul>
+            <div class="socials-nav d-flex justify-content-center mx-5">
+              <a
+                href="https://discord.gg/NTxUyhwrr4"
+                target="_blank"
+                class="mx-2"
+              >
+                <img src="icons/discord-icon.png" />
+              </a>
+              <a
+                href="https://twitter.com/creaturescaring"
+                target="_blank"
+                class="mx-2"
+              >
+                <img src="icons/twitter_icon.png" />
+              </a>
+              <a
+                href="https://www.instagram.com/creaturescaring/"
+                target="_blank"
+                class="mx-2"
+              >
+                <img src="icons/instagram-icon.png" />
+              </a>
+              <a
+                href="https://instagram.com/yourinstagramhandle"
+                target="_blank"
+                class="mx-2"
+              >
+                <img src="icons/opensea-icon.png" />
+              </a>
+              <a
+                href="https://etherscan.io/address/yourcontractaddress"
+                target="_blank"
+                class="mx-2"
+              >
+                <img src="icons/etherscan-icon.png" />
+              </a>
+            </div>
             <div class="mint-button-wrapper">
               <button class="btn mint-button-sm">Mint</button>
             </div>
           </div>
         </div>
       </header>
-
+      <button id="btt-button" onclick="topFunction()">Back to top</button>
       <!-- Landing page with text and an image placeholder -->
       <section class="my-section-greeting">
         <div class="row">
@@ -80,7 +144,11 @@
             </div>
             <br />
             <div class="d-flex mint-button-mobile mt-2 mint-button-wrapper">
-              <button class="btn mint-button">Mint</button>
+              <!-- <button class="btn mint-button">Mint</button> -->
+              <div class="floating">
+                <p>scroll down to read more ↓</p>
+                <!-- <img style="width: 60px;" src="icons/mouseCursor.png"> -->
+              </div>
             </div>
             <br />
           </div>
@@ -128,11 +196,16 @@
             src="img/3.png"
           />
           <div data-aos="fade-left" data-aos-duration="1000">
-            <h2>Goal # 1: Donate £100,000 to a charity in the UK</h2>
+            <h2>
+              Goal # 1: From selling out, donate £100,000 to two charities in
+              the UK
+            </h2>
             <p>
-              We will donate £100,000 to a reputable charity organisation
-              working to address homelessness in the United Kingdom. This will
-              be achieved by selling our profile picture NFT collection.
+              At 25% sellout, we will donate £25,000 to a reputable charity
+              organisation working to address homelessness in the United
+              Kingdom. At 100% sellout we will donate £75,000 to the winning
+              charity of our community election. Both milestones will be reached
+              by selling our profile picture NFT collection.
             </p>
           </div>
         </div>
@@ -289,8 +362,7 @@
         <div class="uti text-center mb-3">
           <h1>UTILITY</h1>
           <p class="sub">
-            Some of the perks you'll get from owning one of our Caring
-            Creatures
+            Some of the perks you'll get from owning one of our Caring Creatures
           </p>
         </div>
         <div class="left">
@@ -326,6 +398,22 @@
                 </div>
               </div>
             </div>
+            <div class="d-flex">
+              <img class="w-25 arrow" src="img/arrow.png" />
+              <div class="px-5">
+                <h5 class="pink">Holders:</h5>
+                <p>
+                  Have a private auction on the art piece through our web app.
+                </p>
+
+                <h5 class="pink">Non-holders:</h5>
+                <p>
+                  If the reserve price is not met on the holders-only auction, a
+                  public auction on OpenSea will take place for holders and
+                  non-holders to bid on the art piece.
+                </p>
+              </div>
+            </div>
             <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-4">
@@ -346,6 +434,24 @@
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="d-flex">
+              <img class="w-25 arrow" src="img/arrow.png" />
+              <div class="px-5">
+                <h5 class="blue">Holders:</h5>
+                <p>
+                  Can enjoy playing for free, they don’t have to buy a ticket
+                  for our game nights. Voluntary contributions are optional but
+                  well-received, as they help us achieve our goals.<br />
+                  There are also special, holders-only game nights.
+                </p>
+
+                <h5 class="blue">Non-holders:</h5>
+                <p>
+                  Have to buy a ticket through our web app in order to
+                  participate in any of game nights.
+                </p>
               </div>
             </div>
             <div class="card mb-3">
@@ -377,6 +483,61 @@
                 </div>
               </div>
             </div>
+            <div class="d-flex">
+              <img class="w-25 arrow" src="img/arrow.png" />
+              <div class="px-5">
+                <h5 class="white">Holders:</h5>
+                <p>
+                  Get the copyright usage for beneficial personal and commercial
+                  purposes.
+                </p>
+
+                <h5 class="white">Non-holders:</h5>
+                <p>No creature, no copyright, no benefits.</p>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="utilities/5.png"
+                    class="img-fluid w-100 card-image"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h4 class="card-title">NFT RAFFLES</h4>
+                    <p class="card-text">
+                      Join the raffles on our web app for exciting prizes. Buy
+                      tickets starting from £0.99 and have a chance to win a
+                      unique digital collectible. All while you help fund our
+                      mission and provide sustained support to charities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex">
+              <img class="w-25 arrow" src="img/arrow.png" />
+              <div class="px-5">
+                <h5 class="red">Holders:</h5>
+                <p>
+                  For each Caring Creature in their possession, they get an
+                  extra raffle ticket. Meaning that if holder “X” has 50 Caring
+                  Creatures and they buy 50 raffle tickets, they’ll get 100
+                  tickets total (doubling the chances of winning!). Holders also
+                  get a priority time window for entering the raffle.
+                </p>
+
+                <h5 class="red">Non-holders:</h5>
+                <p>
+                  Are allowed to buy any number of tickets through the web app
+                  after the holders' priority time window. They don’t get any
+                  extra tickets with their purchase.
+                </p>
+              </div>
+            </div>
             <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-4">
@@ -395,23 +556,47 @@
                       When you hold at least one of our NFTs, you become an
                       essential decision-maker for the project. Every six
                       months, we hold democratic elections where our holders
-                      decide on the charities we'll support.
+                      decide on the next charity we'll support.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="d-flex">
+              <img class="w-25 arrow" src="img/arrow.png" />
+              <div class="px-5">
+                <h5 class="yellow">Holders:</h5>
+                <p>
+                  Decide on the next charity that gets supported. For each
+                  Caring Creature in their possession, they get a vote. Meaning
+                  that if holder “Y” has 10 Caring Creatures, they’ll get 10
+                  votes total in our democratic election.
+                </p>
+
+                <h5 class="yellow">Non-holders:</h5>
+                <p>Don’t get a say in the charities we support.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
+      <section id="funds" class="my-section">
+        <h1 class="text-center mb-4">FUNDS ALLOCATION</h1>
+        <p class="text-center mb-5 sub">
+          How we are planning to use the funds raised from the mint
+        </p>
+        <div class="d-flex justify-content-center">
+          <div id="pie" style="width: 900px; height:700px;"></div>
+        </div>
+        
+      </section>
       <!-- Team Section -->
       <section id="team" class="mb-0 my-section-team">
         <h1 class="text-center mb-4">TEAM</h1>
         <p class="text-center mb-5 sub">
-          Get to know the individuals who make our mission possible. 
+          Get to know the individuals who make our mission possible.
         </p>
-        <div class="card-group">
+        <div class="card-group mt-3">
           <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
             <img src="img/018.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
@@ -422,13 +607,20 @@
                 Bristol. Computer Science and Design background, with a passion
                 for using technology as a way of solving problems.
               </p>
-              <div class="card-footer">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/carlos-leonardo-emanuele-borja-466446179/"
-                  ><img style="width: 30px" src="icons/linkedin-icon.png"
-                /></a>
-              </div>
+            </div>
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/carlos-leonardo-emanuele-borja-466446179/"
+                ><img style="width: 30px" src="icons/linkedin-icon.png"
+              /></a>
+              <button
+                id="label-circle-carlos"
+                onclick="changeImage(id)"
+                class="tag border-blue"
+              >
+                % based
+              </button>
             </div>
           </div>
 
@@ -443,14 +635,21 @@
                 further integrations for this project as it advances, and help
                 those in need.
               </p>
-              <div class="card-footer">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/valentina-casteline-7a9126192/"
-                >
-                  <img style="width: 30px" src="icons/linkedin-icon.png" />
-                </a>
-              </div>
+            </div>
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/valentina-casteline-7a9126192/"
+              >
+                <img style="width: 30px" src="icons/linkedin-icon.png" />
+              </a>
+              <button
+                id="label-circle-val"
+                onclick="changeImage(id)"
+                class="tag border-blue"
+              >
+                % based
+              </button>
             </div>
           </div>
           <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
@@ -459,98 +658,219 @@
               <h4 class="card-title">Sebastián Calderón</h4>
               <h5 class="card-title">Social Media Designer</h5>
               <p class="card-text">
-                Social Media Designer for Caring Creatures. Graphic Design background, with a strong experience in content creation.
+                Social Media Designer for Caring Creatures. Graphic Design
+                background, with a strong experience in content creation.
               </p>
-              <div class="card-footer">
-                <a
-                  target="_blank"
-                  href="https://twitter.com/cxldeh"
-                  ><img style="width: 30px" src="icons/twitter-icon-orange.png"
-                /></a>
-              </div>
+            </div>
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
+              <a target="_blank" href="https://twitter.com/cxldeh"
+                ><img style="width: 30px" src="icons/twitter-icon-orange.png"
+              /></a>
+
+              <button
+                id="label-circle-seb"
+                onclick="changeImage(id)"
+                class="tag border-pink"
+              >
+                Trade of services
+              </button>
             </div>
           </div>
           <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
             <img src="team/337.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
-              <h4 class="card-title">Emilio Espinet </h4>
+              <h4 class="card-title">Emilio Espinet</h4>
               <h5 class="card-title">Community Manager</h5>
               <p class="card-text">
-                Managing the socials of Caring Creatures. London-based Structural Engineer. Enthusiastic and skilled community manager.
+                Managing the socials of Caring Creatures. London-based
+                Structural Engineer. Enthusiastic and skilled community manager.
               </p>
-              <div class="card-footer">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/emilio-espinet"
-                  ><img style="width: 30px" src="icons/linkedin-icon.png"
-                /></a>
-              </div>
+            </div>
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/emilio-espinet"
+                ><img style="width: 30px" src="icons/linkedin-icon.png"
+              /></a>
+              <button
+                id="label-circle-emilio"
+                onclick="changeImage(id)"
+                class="tag border-red"
+              >
+                Fixed rate
+              </button>
             </div>
           </div>
-
         </div>
         <div class="card-group mt-3">
           <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
             <img src="team/149.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
-              <h4 class="card-title">Michael Allam </h4>
-              <h5 class="card-title">Event Organiser
-              </h5>
+              <h4 class="card-title">Michael Allam</h4>
+              <h5 class="card-title">Event Organiser</h5>
               <p class="card-text">
-                Event organiser for Caring Creatures. Bristol-based creative storyteller, with a passion for all things design and artistic expression. Collaborating with projects that aim to benefit the communities around us and tell important stories close to the heart.              </p>
-              <div class="card-footer">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/michaelallam/"
-                  ><img style="width: 30px" src="icons/linkedin-icon.png"
-                /></a>
-              </div>
+                Event organiser for Caring Creatures. Bristol-based creative
+                storyteller, with a passion for all things design and artistic
+                expression. Collaborating with projects that aim to benefit the
+                communities around us and tell important stories close to the
+                heart.
+              </p>
             </div>
-          </div><div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
+            <div class="card-footer mx-3 my-3">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/michaelallam/"
+                ><img style="width: 30px" src="icons/linkedin-icon.png"
+              /></a>
+              <button
+                id="label-circle-mich"
+                onclick="changeImage(id)"
+                class="tag border-red"
+              >
+                Fixed rate
+              </button>
+            </div>
+          </div>
+          <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
             <img src="team/153.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
-              <h4 class="card-title">Gian Marcos Cevallos </h4>
-              <h5 class="card-title">Legal Advisor & Event Organiser
-              </h5>
+              <h4 class="card-title">Gian Marcos Cevallos</h4>
+              <h5 class="card-title">Legal Advisor & Event Organiser</h5>
               <p class="card-text">
-                Legal Advisor & Event Organiser for Caring Creatures. Law background. Ready to help with game nights and ensure fair play and correct resolutions for all parties involved in our events.               </p>
-              <div class="card-footer">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/gian-marcos-cevallos-gallegos-8122321b9/"
-                  ><img style="width: 30px" src="icons/linkedin-icon.png"
-                /></a>
-              </div>
+                Legal Advisor & Event Organiser for Caring Creatures. Law
+                background. Ready to help with game nights and ensure fair play
+                and correct resolutions for all parties involved in our events.
+              </p>
             </div>
-          </div><div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/gian-marcos-cevallos-gallegos-8122321b9/"
+                ><img style="width: 30px" src="icons/linkedin-icon.png"
+              /></a>
+              <button
+                id="label-circle-gian"
+                onclick="changeImage(id)"
+                class="tag border-red"
+              >
+                Fixed rate
+              </button>
+            </div>
+          </div>
+
+          <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
             <img src="team/156.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
               <h4 class="card-title">Dr. Simon Emberton</h4>
               <h5 class="card-title">Project Supervisor</h5>
               <p class="card-text">
-                Programme Leader for the BSc Digital Media course in the Department of Computer Science and Creative Technologies at UWE Bristol.               </p>
-              <div class="card-footer">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/simon-emberton-a5a7b969/"
-                  ><img style="width: 30px" src="icons/linkedin-icon.png"
-                /></a>
-              </div>
+                Carlos’s final year project supervisor. Programme Leader for the
+                BSc Digital Media course in the Department of Computer Science
+                and Creative Technologies at UWE Bristol.
+              </p>
             </div>
-          </div><div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/simon-emberton-a5a7b969/"
+                ><img style="width: 30px" src="icons/linkedin-icon.png"
+              /></a>
+              <button
+                id="label-circle-simon"
+                onclick="changeImage(id)"
+                class="tag border-yellow"
+              >
+                No remuneration
+              </button>
+            </div>
+          </div>
+          <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
             <img src="team/207.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
               <h4 class="card-title">0xtini</h4>
               <h5 class="card-title">Web3 Advisor</h5>
               <p class="card-text">
-                Crypto Connoisseur. Miami-based, #BAYC 6900 owner. Helping Caring Creatures stay on top of trends in the fast-paced web3 space.
+                Crypto Connoisseur. Miami-based, #BAYC 6900 owner. Helping
+                Caring Creatures stay on top of trends in the fast-paced web3
+                space.
               </p>
-              <div class="card-footer">
+            </div>
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
+              <a target="_blank" href="https://twitter.com/0xtini"
+                ><img style="width: 30px" src="icons/twitter-icon-orange.png"
+              /></a>
+              <button
+                id="label-circle-lucho"
+                onclick="changeImage(id)"
+                class="tag border-yellow"
+              >
+                No remuneration
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-group mt-3 justify-content-center">
+          <div class="w-50 d-flex">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              class="card w-50 mx-3"
+            >
+              <img src="team/316.png" class="card-img-top" alt="Founder" />
+              <div class="card-body">
+                <h4 class="card-title">Nonofo Ledimo</h4>
+                <h5 class="card-title">Legal Advisor</h5>
+                <p class="card-text">
+                  Legal Advisor for Caring Creatures. Bristol-based law student.
+                  Responsible for ensuring that the organisation addresses all
+                  legal aspects, maintains compliance with United Kingdom laws,
+                  and operates within the appropriate jurisdiction.
+                </p>
+              </div>
+              <div class="card-footer mx-3 my-3 d-flex align-items-center">
                 <a
                   target="_blank"
-                  href="https://twitter.com/0xtini"
-                  ><img style="width: 30px" src="icons/twitter-icon-orange.png"
+                  href="https://www.linkedin.com/in/nonofo-ledimo-541913210/"
+                  ><img style="width: 30px" src="icons/linkedin-icon.png"
                 /></a>
+                <button
+                id="label-circle-nonofo"
+                onclick="changeImage(id)"
+                class="tag border-yellow"
+              >
+                No remuneration
+              </button>
+              </div>
+            </div>
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              class="card w-50 mx-3"
+            >
+              <img src="team/82.png" class="card-img-top" alt="Founder" />
+              <div class="card-body">
+                <h4 class="card-title">Nathalie Emanuele</h4>
+                <h5 class="card-title">Marketing Advisor</h5>
+                <p class="card-text">
+                  Marketing Advisor for Caring Creatures. Marketing background,
+                  MBA Graduate. Analyse and curate social media content and
+                  strategies used by the social media designer and community
+                  manager.
+                </p>
+              </div>
+              <div class="card-footer mx-3 my-3 d-flex align-items-center">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/nathalieemanuele"
+                  ><img style="width: 30px" src="icons/linkedin-icon.png"
+                /></a>
+                <button
+                id="label-circle-nat"
+                onclick="changeImage(id)"
+                class="tag border-yellow"
+              >
+                No remuneration
+              </button>
               </div>
             </div>
           </div>
@@ -599,11 +919,13 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                  <p>We'll let you decide that! In the same way that you can choose
-                  how much you want to donate to a charity, you can choose how
-                  much to pay for your Caring Creature. The range in our mint
-                  website goes from 0.01 ETH to 0.1 ETH, which at the time of
-                  this reply is a range from £14,39 to £143,9.</p>
+                  <p>
+                    We'll let you decide that! In the same way that you can
+                    choose how much you want to donate to a charity, you can
+                    choose how much to pay for your Caring Creature. The range
+                    in our mint website goes from 0.01 ETH to 0.1 ETH, which at
+                    the time of this reply is a range from £14,39 to £143,9.
+                  </p>
                 </div>
               </div>
             </div>
@@ -651,13 +973,14 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                <p>You can use it for personal and commercial purposes. These
-                  include but are not limited to short films, food trucks,
-                  illustrations, games, album covers, and more.
-                  <br /><br />
-                  Please read our full terms and conditions to clear any doubt.
-                  If you still have a doubt after reading them, raise a ticket
-                  in our discord server, we'll be happy to help :)</p>
+                  <p>
+                    You can use it for personal and commercial purposes. These
+                    include but are not limited to short films, food trucks,
+                    illustrations, games, album covers, and more. <br /><br />
+                    Please read our full terms and conditions to clear any
+                    doubt. If you still have a doubt after reading them, raise a
+                    ticket in our discord server, we'll be happy to help :)
+                  </p>
                 </div>
               </div>
             </div>
@@ -671,7 +994,8 @@
                   aria-expanded="false"
                   aria-controls="collapse4"
                 >
-                  If I have one Caring Creature NFT, how many votes do I get for the biannual elections?
+                  If I have one Caring Creature NFT, how many votes do I get for
+                  the biannual elections?
                 </button>
               </h2>
               <div
@@ -681,9 +1005,12 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                <p>For every Caring Creature you get a vote. This means that if
-                  you have one Caring Creature NFT, you have one vote. If you
-                  were to have five Caring Creatures, you would have five votes.</p>
+                  <p>
+                    For every Caring Creature you get a vote. This means that if
+                    you have one Caring Creature NFT, you have one vote. If you
+                    were to have five Caring Creatures, you would have five
+                    votes.
+                  </p>
                 </div>
               </div>
             </div>
@@ -707,14 +1034,16 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                <p> The community decides! If everyone wants to play Catan, we'll
-                  do a Catan tournament. If everyone wants to play chess, we'll
-                  do a chess tournament. We are always happy to organise what
-                  the majority wants.
-                  <br />
-                  <br />
-                  There will be prizes in every game night, regardless of what
-                  we play :)</p>
+                  <p>
+                    The community decides! If everyone wants to play Catan,
+                    we'll do a Catan tournament. If everyone wants to play
+                    chess, we'll do a chess tournament. We are always happy to
+                    organise what the majority wants.
+                    <br />
+                    <br />
+                    There will be prizes in every game night, regardless of what
+                    we play :)
+                  </p>
                 </div>
               </div>
             </div>
@@ -738,12 +1067,13 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                <p>For our holders it is free to play, however voluntary
-                  contributions are accepted as this is one of the ways we fund
-                  our goals.
-                  <br /><br />
-                  Non-holders will have to pay an entrance fee for the
-                  tournament in which they would like to participate.</p>
+                  <p>
+                    For our holders it is free to play, however voluntary
+                    contributions are accepted as this is one of the ways we
+                    fund our goals. <br /><br />
+                    Non-holders will have to pay an entrance fee for the
+                    tournament in which they would like to participate.
+                  </p>
                 </div>
               </div>
             </div>
@@ -767,11 +1097,19 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                <p>Not necessarily. Only the initial donation is set to be made for a charity supporting the unhoused community. We have made this decision because our project started by researching if we could help the unhoused community in the UK through the use of NFTs. 
-                  <br><br>
-                  6 months after the initial election of the homeless charity has taken place, a new electoral process will start and we will then support the charity that the community chooses. 
-                  <br>
-                  It is up to the community to decide if we will continue supporting homeless charities in the future or if there is another problematic where we want to focus our resources, attention, and support.</p>
+                  <p>
+                    Not necessarily. Only the initial £25,000 donation is set to
+                    be made for a charity supporting the unhoused community. We
+                    have made this decision because our project started by
+                    researching if we could help the unhoused community in the
+                    UK through the use of NFTs.<br /><br />At sellout, our first
+                    electoral process will take place and we will support the
+                    winning charity chosen by the community. <br /><br />It is
+                    up to the community to decide if we will continue supporting
+                    homeless charities in the future or if there is another
+                    problematic where we want to focus our resources, attention,
+                    and support.
+                  </p>
                 </div>
               </div>
             </div>
@@ -855,12 +1193,13 @@
                 <img src="icons/twitter_icon.png" />
               </a>
               <a
-                href="https://etherscan.io/address/yourcontractaddress"
+                href="https://www.instagram.com/creaturescaring/"
                 target="_blank"
                 class="mx-2"
               >
-                <img src="icons/etherscan-icon.png" />
+                <img src="icons/instagram-icon.png" />
               </a>
+
               <a
                 href="https://instagram.com/yourinstagramhandle"
                 target="_blank"
@@ -869,11 +1208,11 @@
                 <img src="icons/opensea-icon.png" />
               </a>
               <a
-                href="https://www.instagram.com/creaturescaring/"
+                href="https://etherscan.io/address/yourcontractaddress"
                 target="_blank"
                 class="mx-2"
               >
-                <img src="icons/instagram-icon.png" />
+                <img src="icons/etherscan-icon.png" />
               </a>
             </div>
           </div>
@@ -898,6 +1237,92 @@
       </footer>
     </div>
   </body>
+  <script type="text/javascript">
+    var chartDom = document.getElementById('pie');
+var myChart = echarts.init(chartDom);
+var option;
+
+const tooltips = {
+  a: 'Valentina',
+  b: 'Carlos',
+  c: 'Nathalie'
+};
+option = {
+  tooltip: {
+    textStyle: {
+          fontFamily: 'ProfontWindows',
+          color: 'black',
+          fontSize: '15px'
+        },
+    trigger: 'item',
+    formatter: function (params) {
+      return `${params.name}: ${params.percent}%<br />
+              ${params.data.msg}`;
+    }
+  },
+  legend: {
+    textStyle: {
+      fontFamily: 'MinecraftRegular',
+      color: 'white',
+      fontSize: '20px'
+    },
+    orient: 'vertical',
+    left: 'right'
+  },
+  series: [
+    {
+      
+      name: 'Funds',
+      type: 'pie',
+      radius: '50%',
+      data: [
+        {
+          value: 70,
+          name: 'Charity Donation',
+          msg: `• 25K at 25% sellout<br>• 75K at 100% sellout`
+        },
+        {
+          value: 15,
+          name: 'Project Development',
+          msg: `• 6% NFT Raffles<br>• 3% Game Nights<br>• 6% Art auctions`
+        },
+        { value: 15, name: 'Costs and Salaries', msg: `• Team Salaries
+        <br>• Smart Contract Deployment
+        <br>• Web Hosting
+        <br>• Ledger Nano X
+        <br>• Web Domains
+        <br>• Marketing` }
+      ],
+      itemStyle: {
+        borderWidth: 2,
+        borderColor: "#0b0014"
+      },
+      label: {
+        textStyle: {
+          fontFamily: 'MinecraftRegular',
+          color: 'white',
+          fontSize: '20px'
+        },
+        
+        
+      },
+      
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+      
+    }
+    
+  ]
+};
+
+option && myChart.setOption(option);
+
+</script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
