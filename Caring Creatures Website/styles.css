@@ -17,6 +17,51 @@
   --primary-font: "MinecraftRegular", sans-serif, "ProfontWindows";
   --bold-font: "MinecraftBold", sans-serif;
 }
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  background-color:#111;
+  display: flex;
+  border-radius:50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  /* transform: scale(1.5); */
+}
+.label svg{
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+  color: white;
+}
+
+.ball {
+  width: 15px;
+    height: 15px;
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+.bsll{
+  transform: translateX(24px);
+
+}
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
 #gallery .carousel {
   max-width: 512px; /* Adjust the width as needed */
   margin: 0 auto; /* Center the carousel */
@@ -165,6 +210,10 @@ h6 {
   pointer-events: none !important;
   background-color: #f18805;
 }
+#funds .card{
+  background-color: #0b0014!important;
+  color: #f5e9e2;
+}
 
 .retro-border {
   display: inline-block;
@@ -176,7 +225,7 @@ h6 {
 .my-section {
   margin: 0;
   padding-top: 150px;
-  padding-bottom: 150px;
+  padding-bottom: 40px;
   padding-left: 160px;
   padding-right: 180px;
   background-color: #d95d39;
@@ -284,12 +333,18 @@ footer h2 {
   width: 200%;
   animation: bannermove 20s linear infinite;
 }
-
+.pieImage{
+  display: none;
+}
 .a2 {
   display: flex;
   width: 200%;
   animation: bannermoveLeft 20s linear infinite;
 }
+#funds{
+  overflow-x: hidden;
+}
+
 @keyframes bannermove {
   to {
     transform: translateX(0);
@@ -307,10 +362,18 @@ footer h2 {
   }
 }
 @media only screen and (max-width: 767px) {
+  .pieImage{
+    display: block;
+  }
+  canvas{
+   display: none;
+  }
+  #pie{
+    display: none;
+  }
   .sec {
     width: 250%;
   }
-
   .a2 {
     display: none;
   }
@@ -463,6 +526,9 @@ footer h2 {
  font-size: 1.1rem;
 }
 @media only screen and (max-width: 1130px) {
+  .socials-nav{
+    display: none!important;
+  }
   .sub{
     font-size: 1rem!important;
   }
@@ -624,6 +690,10 @@ footer h2 {
   background-color: #FEF49D;
   border-color: #FEF49D!important;
 }
+.last-row{
+  width: 50%;
+  display: flex;
+}
 .arrow{
   height: 150px;
 }
@@ -643,7 +713,7 @@ footer h2 {
   color:#FD5555
 }
 .tag{
-  transition: all ease-in-out;  
+  transition: all .2 ease-in-out;  
   margin-left: 8px;
   border-radius: 20px;
   width: 20px;
@@ -660,6 +730,10 @@ footer h2 {
 }
 
 @media only screen and (max-width: 415px) {
+  .pie{
+    width: 400;
+    height: auto;
+  }
   .socials-nav{
     display: none;
   }
@@ -684,10 +758,24 @@ footer h2 {
   .greeting{
     margin-top: 30px;
   }
+  .my-section p{
+    font-size: 1.2rem;
+  }
 }
 @media only screen and (min-width: 575px) and (max-width: 1000px) {
   #team .card{
     margin: 0!important;
+  }
+  
+}
+
+@media only screen and (max-width: 575px){
+  .last-row{
+    display: block!important;
+    width: 100%!important;
+  }
+  .last-row .card{
+    width: auto!important;
   }
 }
 

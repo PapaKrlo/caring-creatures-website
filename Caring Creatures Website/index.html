@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Caring Creatures</title>
     <link rel="icon" type="image/x-icon" href="img/3.png" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -17,41 +16,57 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script>
+      function changeTheme(){
+          var theme = document.getElementsByTagName('link')[3];
+          const checkbox = document.getElementById('checkbox');
+
+          //checkbox.addEventListener('change', ()=>{
+            if (theme.getAttribute('href') == 'styles.css') {
+              theme.setAttribute('href', 'styles2.css');
+              document.getElementById("roadmapD").src="img/roadmapD-w.png";
+              document.getElementById("roadmapM").src="img/roadmapM-w.png";
+
+            } else {
+                theme.setAttribute('href', 'styles.css');
+                document.getElementById("roadmapD").src="img/roadmapD.png";
+                document.getElementById("roadmapM").src="img/roadmapM.png";
+
+            }
+          //})
+          }
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js%22%3E"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
-   
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script> -->
-
-    <!-- react-vis -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/react-vis/dist/style.css">
-    <script type="text/javascript" src="https://unpkg.com/react-vis/dist/dist.min.js"></script> -->
-
     <script src="echarts.js"></script>
-    
-    <!-- <script type="text/babel">
-        
-        const {
-          XYPlot,
-          RadialChart
-        } = reactVis;
-       
-        const data = [{angle: 7, label:"Charity Donation"}, {angle: 1.5, label: 'Project Development'}, {angle: 1.5, label: 'Costs and Salaries'} ]
-        const radial = <RadialChart width={400} height={400} data={data} showLabels/>
-        ReactDOM.render(radial, document.getElementById('pie'));
-    </script> -->
   </head>
   <body>
+    
     <!-- Header with navigation and mint button -->
     <div class="outer">
       <header class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
+          <div class="theme-color">
+            <!-- <input type="checkbox" class="checkbox" id="checkbox"> -->
+            <label for="checkbox" class="label">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
+                  <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+                </svg>
+              </div>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
+                  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                </svg>
+              </div>
+             <div onclick="changeTheme()" class='ball'></div>
+            </label>
+          </div>
           <a class="navbar-brand" href="#"
-            ><h4 style="margin: 0 !important">CARING CREATURES</h4></a
+            ><h4 style="margin: 0 !important; margin-left: 10px!important;">CARING CREATURES</h4></a
           >
           <button
             class="navbar-toggler"
@@ -82,8 +97,12 @@
                 <a class="nav-link" href="#roadmap">Roadmap</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#funds">Funds</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#faq">FAQ</a>
               </li>
+            
             </ul>
             <div class="socials-nav d-flex justify-content-center mx-5">
               <a
@@ -107,13 +126,13 @@
               >
                 <img src="icons/instagram-icon.png" />
               </a>
-              <a
+              <!-- <a
                 href="https://instagram.com/yourinstagramhandle"
                 target="_blank"
                 class="mx-2"
               >
                 <img src="icons/opensea-icon.png" />
-              </a>
+              </a> -->
               <a
                 href="https://etherscan.io/address/yourcontractaddress"
                 target="_blank"
@@ -136,18 +155,17 @@
             <h3 class="welcome">Help us make a caring Kingdom.</h3>
             <h1>CARING CREATURES</h1>
             <p>Join our philanthropic community and explore our goals!</p>
-            <div id="timer" class="d-flex justify-content-start mt-3">
+            <!-- <div id="timer" class="d-flex justify-content-start mt-3">
               <div class="days"></div>
               <div class="hours"></div>
               <div class="minutes"></div>
               <div class="seconds"></div>
-            </div>
+            </div> -->
             <br />
-            <div class="d-flex mint-button-mobile mt-2 mint-button-wrapper">
-              <!-- <button class="btn mint-button">Mint</button> -->
+            <div class="d-flex mint-button-mobile mt-2">
+              <!-- <button class="btn mint-button mint-button-wrapper">Mint</button> -->
               <div class="floating">
                 <p>scroll down to read more ↓</p>
-                <!-- <img style="width: 60px;" src="icons/mouseCursor.png"> -->
               </div>
             </div>
             <br />
@@ -271,9 +289,7 @@
               Macmillan Cancer Support, British Heart Foundation, Alzheimer's
               Society, Children in Need, Dementia UK, and more!
               <br />
-              <br />
-              We would be happy to have you in our community, join the project
-              now :)
+              
             </p>
           </div>
           <div class="col-md-6">
@@ -400,7 +416,7 @@
             </div>
             <div class="d-flex">
               <img class="w-25 arrow" src="img/arrow.png" />
-              <div class="px-5">
+              <div>
                 <h5 class="pink">Holders:</h5>
                 <p>
                   Have a private auction on the art piece through our web app.
@@ -438,7 +454,7 @@
             </div>
             <div class="d-flex">
               <img class="w-25 arrow" src="img/arrow.png" />
-              <div class="px-5">
+              <div>
                 <h5 class="blue">Holders:</h5>
                 <p>
                   Can enjoy playing for free, they don’t have to buy a ticket
@@ -485,7 +501,7 @@
             </div>
             <div class="d-flex">
               <img class="w-25 arrow" src="img/arrow.png" />
-              <div class="px-5">
+              <div>
                 <h5 class="white">Holders:</h5>
                 <p>
                   Get the copyright usage for beneficial personal and commercial
@@ -520,7 +536,7 @@
             </div>
             <div class="d-flex">
               <img class="w-25 arrow" src="img/arrow.png" />
-              <div class="px-5">
+              <div>
                 <h5 class="red">Holders:</h5>
                 <p>
                   For each Caring Creature in their possession, they get an
@@ -564,7 +580,7 @@
             </div>
             <div class="d-flex">
               <img class="w-25 arrow" src="img/arrow.png" />
-              <div class="px-5">
+              <div>
                 <h5 class="yellow">Holders:</h5>
                 <p>
                   Decide on the next charity that gets supported. For each
@@ -580,21 +596,12 @@
           </div>
         </div>
       </section>
-      <section id="funds" class="my-section">
-        <h1 class="text-center mb-4">FUNDS ALLOCATION</h1>
-        <p class="text-center mb-5 sub">
-          How we are planning to use the funds raised from the mint
-        </p>
-        <div class="d-flex justify-content-center">
-          <div id="pie" style="width: 900px; height:700px;"></div>
-        </div>
-        
-      </section>
       <!-- Team Section -->
       <section id="team" class="mb-0 my-section-team">
         <h1 class="text-center mb-4">TEAM</h1>
         <p class="text-center mb-5 sub">
           Get to know the individuals who make our mission possible.
+          <br>
         </p>
         <div class="card-group mt-3">
           <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
@@ -653,7 +660,7 @@
             </div>
           </div>
           <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
-            <img src="team/298.png" class="card-img-top" alt="Founder" />
+            <img src="team/82.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
               <h4 class="card-title">Sebastián Calderón</h4>
               <h5 class="card-title">Social Media Designer</h5>
@@ -710,8 +717,7 @@
               <h5 class="card-title">Event Organiser</h5>
               <p class="card-text">
                 Event organiser for Caring Creatures. Bristol-based creative
-                storyteller, with a passion for all things design and artistic
-                expression. Collaborating with projects that aim to benefit the
+                storyteller. Collaborating with projects that aim to benefit the
                 communities around us and tell important stories close to the
                 heart.
               </p>
@@ -735,7 +741,7 @@
             <img src="team/153.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
               <h4 class="card-title">Gian Marcos Cevallos</h4>
-              <h5 class="card-title">Legal Advisor & Event Organiser</h5>
+              <h5 class="card-title">Game Leader</h5>
               <p class="card-text">
                 Legal Advisor & Event Organiser for Caring Creatures. Law
                 background. Ready to help with game nights and ensure fair play
@@ -809,8 +815,8 @@
             </div>
           </div>
         </div>
-        <div class="card-group mt-3 justify-content-center">
-          <div class="w-50 d-flex">
+        <div class="card-group mt-3 justify-content-center last-row">
+          <!-- <div class="last-row"> -->
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
@@ -834,12 +840,12 @@
                   ><img style="width: 30px" src="icons/linkedin-icon.png"
                 /></a>
                 <button
-                id="label-circle-nonofo"
-                onclick="changeImage(id)"
-                class="tag border-yellow"
-              >
-                No remuneration
-              </button>
+                  id="label-circle-nonofo"
+                  onclick="changeImage(id)"
+                  class="tag border-yellow"
+                >
+                  No remuneration
+                </button>
               </div>
             </div>
             <div
@@ -847,7 +853,7 @@
               data-aos-duration="1000"
               class="card w-50 mx-3"
             >
-              <img src="team/82.png" class="card-img-top" alt="Founder" />
+              <img src="team/298.png" class="card-img-top" alt="Founder" />
               <div class="card-body">
                 <h4 class="card-title">Nathalie Emanuele</h4>
                 <h5 class="card-title">Marketing Advisor</h5>
@@ -865,16 +871,17 @@
                   ><img style="width: 30px" src="icons/linkedin-icon.png"
                 /></a>
                 <button
-                id="label-circle-nat"
-                onclick="changeImage(id)"
-                class="tag border-yellow"
-              >
-                No remuneration
-              </button>
+                  id="label-circle-nat"
+                  onclick="changeImage(id)"
+                  class="tag border-yellow"
+                >
+                  No remuneration
+                </button>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
         </div>
+       
       </section>
 
       <!-- Roadmap Section -->
@@ -886,10 +893,40 @@
           developments, and milestones as we grow together past sellout.
         </p>
         <div class="d-flex justify-content-center">
-          <img class="roadmap-des w-100" src="img/roadmapD.png" />
+          <img id="roadmapD" class="roadmap-des w-100" src="img/roadmapD.png" />
         </div>
         <div class="d-flex justify-content-center">
-          <img class="roadmap-mob" src="img/roadmapM.png" />
+          <img id="roadmapM" class="roadmap-mob" src="img/roadmapM.png" />
+        </div>
+      </section>
+      <section id="funds" class="my-section">
+        <h1 class="text-center mb-4">FUNDS ALLOCATION</h1>
+        <p class="text-center mb-5 sub">
+          How we are planning to use the funds raised from the mint
+        </p>
+        
+       <div class="pieImage text-center">
+          <h3 class="blue">Charity Donations</h3>
+          <p>
+            25K at 25% sellout<br />
+            75K at 100% sellout
+          </p>
+          <h3 class="pink">Project Development</h3>
+          <p>
+            NFT Raffles<br />
+            Game Nights<br />
+            Art auctions
+          </p>
+          <h3 class="yellow">Costs and Salaries</h3>
+          <p>
+            Team Salaries <br />Smart Contract Deployment <br />Web Hosting
+            <br />Ledger Nano X <br />Web Domains <br />Marketing
+          </p>
+       </div>
+               
+        <div class="d-flex justify-content-center">
+          <div id="pie" style="width: 900px; height: 700px"></div>
+          <img class="img-fluid pieImage" src="img/pie.png" />
         </div>
       </section>
 
@@ -1200,13 +1237,13 @@
                 <img src="icons/instagram-icon.png" />
               </a>
 
-              <a
+              <!-- <a
                 href="https://instagram.com/yourinstagramhandle"
                 target="_blank"
                 class="mx-2"
               >
                 <img src="icons/opensea-icon.png" />
-              </a>
+              </a> -->
               <a
                 href="https://etherscan.io/address/yourcontractaddress"
                 target="_blank"
@@ -1238,91 +1275,87 @@
     </div>
   </body>
   <script type="text/javascript">
-    var chartDom = document.getElementById('pie');
-var myChart = echarts.init(chartDom);
-var option;
+    var chartDom = document.getElementById("pie");
+    var myChart = echarts.init(chartDom);
+    var option;
 
-const tooltips = {
-  a: 'Valentina',
-  b: 'Carlos',
-  c: 'Nathalie'
-};
-option = {
-  tooltip: {
-    textStyle: {
-          fontFamily: 'ProfontWindows',
-          color: 'black',
-          fontSize: '15px'
+    option = {
+      tooltip: {
+        textStyle: {
+          fontFamily: "ProfontWindows",
+          color: "black",
+          fontSize: "2rem",
         },
-    trigger: 'item',
-    formatter: function (params) {
-      return `${params.name}: ${params.percent}%<br />
+        trigger: "item",
+        formatter: function (params) {
+          return `${params.name}: ${params.percent}%<br />
               ${params.data.msg}`;
-    }
-  },
-  legend: {
-    textStyle: {
-      fontFamily: 'MinecraftRegular',
-      color: 'white',
-      fontSize: '20px'
-    },
-    orient: 'vertical',
-    left: 'right'
-  },
-  series: [
-    {
-      
-      name: 'Funds',
-      type: 'pie',
-      radius: '50%',
-      data: [
-        {
-          value: 70,
-          name: 'Charity Donation',
-          msg: `• 25K at 25% sellout<br>• 75K at 100% sellout`
         },
-        {
-          value: 15,
-          name: 'Project Development',
-          msg: `• 6% NFT Raffles<br>• 3% Game Nights<br>• 6% Art auctions`
+      },
+      legend: {
+        textStyle: {
+          fontFamily: "MinecraftRegular",
+          color: "white",
+          fontSize: "20px",
         },
-        { value: 15, name: 'Costs and Salaries', msg: `• Team Salaries
+        orient: "vertical",
+        left: "right",
+      },
+      series: [
+        {
+          name: "Funds",
+          type: "pie",
+          radius: "50%",
+          data: [
+            {
+              value: 70,
+              name: "Charity Donations",
+              msg: `• 25K at 25% sellout<br>• 75K at 100% sellout`,
+            },
+            {
+              value: 15,
+              name: "Project Development",
+              msg: `• NFT Raffles<br>• Game Nights<br>• Art auctions`,
+            },
+            {
+              value: 15,
+              name: "Costs and Salaries",
+              msg: `• Team Salaries
         <br>• Smart Contract Deployment
         <br>• Web Hosting
         <br>• Ledger Nano X
         <br>• Web Domains
-        <br>• Marketing` }
-      ],
-      itemStyle: {
-        borderWidth: 2,
-        borderColor: "#0b0014"
-      },
-      label: {
-        textStyle: {
-          fontFamily: 'MinecraftRegular',
-          color: 'white',
-          fontSize: '20px'
+        <br>• Marketing`,
+            },
+          ],
+          itemStyle: {
+            borderWidth: 2,
+            borderColor: "#0b0014",
+          },
+          label: {
+            textStyle: {
+              fontFamily: "MinecraftRegular",
+              color: "white",
+              fontSize: "20px",
+            },
+            formatter: function (params) {
+              return params.percent + "%";
+            },
+          },
+          color: ["#526DFE", "#DAB5FE", "#FEF49D"],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: "rgba(0, 0, 0, 0.5)",
+            },
+          },
         },
-        
-        
-      },
-      
-      emphasis: {
-        itemStyle: {
-          shadowBlur: 10,
-          shadowOffsetX: 0,
-          shadowColor: 'rgba(0, 0, 0, 0.5)'
-        }
-      }
-      
-    }
-    
-  ]
-};
+      ],
+    };
 
-option && myChart.setOption(option);
-
-</script>
+    option && myChart.setOption(option);
+  </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
