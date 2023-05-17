@@ -43,12 +43,13 @@
     margin-right: 10px;
   }
   .ball {
-    width: 15px;
-    height: 15px;
-    background-color: white;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border: solid white 1px;
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 4px;
+    left: 3px;
     border-radius: 50%;
     transition: transform 0.2s linear;
   }
@@ -212,6 +213,15 @@
   #funds .card{
     background-color: #f4ffe9!important;
     color: #0a162f;
+  }
+  #funds{
+    background-color: #483b32;
+  }
+  #funds h1{
+    color: #f4ffe9;
+  }
+  #funds p{
+    color: #f4ffe9;
   }
   
   .retro-border {
@@ -445,7 +455,6 @@
   /* FAQ Section */
   #faq {
     background-color: var(--primary-color);
-    font-family: "MinecraftRegular", sans-serif;
   }
   
   #faq #faq-title {
@@ -473,6 +482,8 @@
     display: block;
     width: 100%;
     text-align: left;
+    font-family: "ProfontWindows";
+    font-size: 1.4rem;
   }
   
   #faq .accordion-collapse {
@@ -696,6 +707,12 @@
     width: 50%;
     display: flex;
   }
+  .last-row .card{
+    border-radius: 0;
+  }
+  .last-row .card-img-top{
+    border-radius: 0;
+  }
   .arrow{
     height: 150px;
   }
@@ -711,6 +728,9 @@
   .yellow{
     color: #010563;
   }
+  .yellow1{
+    color: #FEF49D;
+  }
   .red{
     color:#FD5555
   }
@@ -724,8 +744,9 @@
     width: 20px;
     height: 20px;
     font-size: 0px;
-    }
+  }
   .tag-open{
+    color: white;
     margin-left: 8px;
     border-radius: 20px;
     transition: all .2s ease-in-out;  

@@ -44,12 +44,13 @@
 }
 
 .ball {
-  width: 15px;
-    height: 15px;
-    background-color: white;
-    position: absolute;
-    top: 5px;
-    left: 5px;
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: solid white 1px;
+  position: absolute;
+  top: 4px;
+  left: 3px;
   border-radius: 50%;
   transition: transform 0.2s linear;
 }
@@ -443,7 +444,6 @@ footer h2 {
 /* FAQ Section */
 #faq {
   background-color: var(--primary-color);
-  font-family: "MinecraftRegular", sans-serif;
 }
 
 #faq #faq-title {
@@ -471,6 +471,8 @@ footer h2 {
   display: block;
   width: 100%;
   text-align: left;
+  font-family: "ProfontWindows";
+  font-size: 1.4rem;
 }
 
 #faq .accordion-collapse {
@@ -693,6 +695,12 @@ footer h2 {
 .last-row{
   width: 50%;
   display: flex;
+}
+.last-row .card{
+  border-radius: 0;
+}
+.last-row .card-img-top{
+  border-radius: 0;
 }
 .arrow{
   height: 150px;

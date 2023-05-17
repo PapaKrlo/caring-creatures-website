@@ -20,17 +20,24 @@
       function changeTheme(){
           var theme = document.getElementsByTagName('link')[3];
           const checkbox = document.getElementById('checkbox');
-
+          var arrows = document.getElementsByClassName('arrow');
           //checkbox.addEventListener('change', ()=>{
             if (theme.getAttribute('href') == 'styles.css') {
               theme.setAttribute('href', 'styles2.css');
-              document.getElementById("roadmapD").src="img/roadmapD-w.png";
-              document.getElementById("roadmapM").src="img/roadmapM-w.png";
-
+              document.getElementById("roadmapD").src="img/roadmapD-light.png";
+              document.getElementById("roadmapM").src="img/roadmapM-light.png";
+              for(let i=0; i< arrows.length; i++){
+                arrows[i].src = "img/arrow-black.png"
+              }
+              document.getElementById("pie-img").src = "img/pie-brown.png";
             } else {
                 theme.setAttribute('href', 'styles.css');
                 document.getElementById("roadmapD").src="img/roadmapD.png";
                 document.getElementById("roadmapM").src="img/roadmapM.png";
+                for(let i=0; i< arrows.length; i++){
+                arrows[i].src = "img/arrow.png"
+                }
+                document.getElementById("pie-img").src = "img/pie.png";
 
             }
           //})
@@ -117,7 +124,7 @@
                 target="_blank"
                 class="mx-2"
               >
-                <img src="icons/twitter_icon.png" />
+                <img src="icons/twitter-icon.png" />
               </a>
               <a
                 href="https://www.instagram.com/creaturescaring/"
@@ -133,13 +140,13 @@
               >
                 <img src="icons/opensea-icon.png" />
               </a> -->
-              <a
+              <!-- <a
                 href="https://etherscan.io/address/yourcontractaddress"
                 target="_blank"
                 class="mx-2"
               >
                 <img src="icons/etherscan-icon.png" />
-              </a>
+              </a> -->
             </div>
             <div class="mint-button-wrapper">
               <button class="btn mint-button-sm">Mint</button>
@@ -660,30 +667,6 @@
             </div>
           </div>
           <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
-            <img src="team/82.png" class="card-img-top" alt="Founder" />
-            <div class="card-body">
-              <h4 class="card-title">Sebastián Calderón</h4>
-              <h5 class="card-title">Social Media Designer</h5>
-              <p class="card-text">
-                Social Media Designer for Caring Creatures. Graphic Design
-                background, with a strong experience in content creation.
-              </p>
-            </div>
-            <div class="card-footer mx-3 my-3 d-flex align-items-center">
-              <a target="_blank" href="https://twitter.com/cxldeh"
-                ><img style="width: 30px" src="icons/twitter-icon-orange.png"
-              /></a>
-
-              <button
-                id="label-circle-seb"
-                onclick="changeImage(id)"
-                class="tag border-pink"
-              >
-                Trade of services
-              </button>
-            </div>
-          </div>
-          <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
             <img src="team/337.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
               <h4 class="card-title">Emilio Espinet</h4>
@@ -708,8 +691,6 @@
               </button>
             </div>
           </div>
-        </div>
-        <div class="card-group mt-3">
           <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
             <img src="team/149.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
@@ -722,7 +703,7 @@
                 heart.
               </p>
             </div>
-            <div class="card-footer mx-3 my-3">
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/michaelallam/"
@@ -737,13 +718,15 @@
               </button>
             </div>
           </div>
+        </div>
+        <div class="card-group mt-3">
           <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
             <img src="team/153.png" class="card-img-top" alt="Founder" />
             <div class="card-body">
               <h4 class="card-title">Gian Marcos Cevallos</h4>
               <h5 class="card-title">Game Leader</h5>
               <p class="card-text">
-                Legal Advisor & Event Organiser for Caring Creatures. Law
+                Game night organiser for Caring Creatures. Law
                 background. Ready to help with game nights and ensure fair play
                 and correct resolutions for all parties involved in our events.
               </p>
@@ -814,13 +797,10 @@
               </button>
             </div>
           </div>
-        </div>
-        <div class="card-group mt-3 justify-content-center last-row">
-          <!-- <div class="last-row"> -->
-            <div
+          <div
               data-aos="fade-right"
               data-aos-duration="1000"
-              class="card w-50 mx-3"
+              class="card mx-3"
             >
               <img src="team/316.png" class="card-img-top" alt="Founder" />
               <div class="card-body">
@@ -848,6 +828,9 @@
                 </button>
               </div>
             </div>
+        </div>
+        <div class="card-group mt-3 justify-content-center last-row">
+          <!-- <div class="last-row"> -->
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
@@ -879,6 +862,35 @@
                 </button>
               </div>
             </div>
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              class="card w-50 mx-3"
+            >
+              <img src="team/804.png" class="card-img-top" alt="Founder" />
+              <div class="card-body">
+                <h4 class="card-title">Layla Novo</h4>
+                <h5 class="card-title">Video Editor</h5>
+                <p class="card-text">
+                  Video Editor for Caring Creatures. Digital Media background. Extremely interested in animation and video editing. Excels at collaborating and cooperating within a team alongside having key leadership skills to motivate and manage a variety of tasks, such as the creation of audiovisual content for this collection.
+                </p>
+              </div>
+              <div class="card-footer mx-3 my-3 d-flex align-items-center">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/nathalieemanuele"
+                  ><img style="width: 30px" src="icons/linkedin-icon.png"
+                /></a>
+                <button
+                  id="label-circle-lay"
+                  onclick="changeImage(id)"
+                  class="tag border-yellow"
+                >
+                  No remuneration
+                </button>
+              </div>
+            </div>
+            
           <!-- </div> -->
         </div>
        
@@ -917,7 +929,7 @@
             Game Nights<br />
             Art auctions
           </p>
-          <h3 class="yellow">Costs and Salaries</h3>
+          <h3 class="yellow yellow1">Costs and Salaries</h3>
           <p>
             Team Salaries <br />Smart Contract Deployment <br />Web Hosting
             <br />Ledger Nano X <br />Web Domains <br />Marketing
@@ -926,7 +938,7 @@
                
         <div class="d-flex justify-content-center">
           <div id="pie" style="width: 900px; height: 700px"></div>
-          <img class="img-fluid pieImage" src="img/pie.png" />
+          <img id="pie-img" class="img-fluid pieImage" src="img/pie.png" />
         </div>
       </section>
 
@@ -1227,7 +1239,7 @@
                 target="_blank"
                 class="mx-2"
               >
-                <img src="icons/twitter_icon.png" />
+                <img src="icons/twitter-icon.png" />
               </a>
               <a
                 href="https://www.instagram.com/creaturescaring/"
@@ -1244,13 +1256,13 @@
               >
                 <img src="icons/opensea-icon.png" />
               </a> -->
-              <a
+              <!-- <a
                 href="https://etherscan.io/address/yourcontractaddress"
                 target="_blank"
                 class="mx-2"
               >
                 <img src="icons/etherscan-icon.png" />
-              </a>
+              </a> -->
             </div>
           </div>
           <div class="row mt-5">
