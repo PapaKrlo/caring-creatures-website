@@ -211,6 +211,9 @@ h6 {
   pointer-events: none !important;
   background-color: #f18805;
 }
+/* #funds{
+  background-color: #585E90;
+} */
 #funds .card{
   background-color: #0b0014!important;
   color: #f5e9e2;

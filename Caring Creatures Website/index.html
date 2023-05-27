@@ -16,33 +16,33 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/@crossmint/client-sdk-vanilla-ui@0.1.0/lib/index.global.js"></script>
     <script>
-      function changeTheme(){
-          var theme = document.getElementsByTagName('link')[3];
-          const checkbox = document.getElementById('checkbox');
-          var arrows = document.getElementsByClassName('arrow');
-          //checkbox.addEventListener('change', ()=>{
-            if (theme.getAttribute('href') == 'styles.css') {
-              theme.setAttribute('href', 'styles2.css');
-              document.getElementById("roadmapD").src="img/roadmapD-light.png";
-              document.getElementById("roadmapM").src="img/roadmapM-light.png";
-              for(let i=0; i< arrows.length; i++){
-                arrows[i].src = "img/arrow-black.png"
-              }
-              document.getElementById("pie-img").src = "img/pie-brown.png";
-            } else {
-                theme.setAttribute('href', 'styles.css');
-                document.getElementById("roadmapD").src="img/roadmapD.png";
-                document.getElementById("roadmapM").src="img/roadmapM.png";
-                for(let i=0; i< arrows.length; i++){
-                arrows[i].src = "img/arrow.png"
-                }
-                document.getElementById("pie-img").src = "img/pie.png";
-
-            }
-          //})
+      function changeTheme() {
+        var theme = document.getElementsByTagName("link")[3];
+        const checkbox = document.getElementById("checkbox");
+        var arrows = document.getElementsByClassName("arrow");
+        //checkbox.addEventListener('change', ()=>{
+        if (theme.getAttribute("href") == "styles.css") {
+          theme.setAttribute("href", "styles2.css");
+          document.getElementById("roadmapD").src = "img/roadmapD-light.png";
+          document.getElementById("roadmapM").src = "img/roadmapM-light.png";
+          for (let i = 0; i < arrows.length; i++) {
+            arrows[i].src = "img/arrow-black.png";
           }
-  </script>
+          document.getElementById("pie-img").src = "img/pie-brown.png";
+        } else {
+          theme.setAttribute("href", "styles.css");
+          document.getElementById("roadmapD").src = "img/roadmapD.png";
+          document.getElementById("roadmapM").src = "img/roadmapM.png";
+          for (let i = 0; i < arrows.length; i++) {
+            arrows[i].src = "img/arrow.png";
+          }
+          document.getElementById("pie-img").src = "img/pie.png";
+        }
+        //})
+      }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js%22%3E"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -51,7 +51,6 @@
     <script src="echarts.js"></script>
   </head>
   <body>
-    
     <!-- Header with navigation and mint button -->
     <div class="outer">
       <header class="navbar navbar-expand-lg navbar-dark">
@@ -60,20 +59,40 @@
             <!-- <input type="checkbox" class="checkbox" id="checkbox"> -->
             <label for="checkbox" class="label">
               <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
-                  <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-moon"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"
+                  />
                 </svg>
               </div>
               <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
-                  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-sun"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+                  />
                 </svg>
               </div>
-             <div onclick="changeTheme()" class='ball'></div>
+              <div onclick="changeTheme()" class="ball"></div>
             </label>
           </div>
           <a class="navbar-brand" href="#"
-            ><h4 style="margin: 0 !important; margin-left: 10px!important;">CARING CREATURES</h4></a
+            ><h4 style="margin: 0 !important; margin-left: 10px !important">
+              CARING CREATURES
+            </h4></a
           >
           <button
             class="navbar-toggler"
@@ -109,7 +128,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="#faq">FAQ</a>
               </li>
-            
             </ul>
             <div class="socials-nav d-flex justify-content-center mx-5">
               <a
@@ -171,6 +189,15 @@
             <br />
             <div class="d-flex mint-button-mobile mt-2">
               <!-- <button onclick="location.href='mint.html';" class="d-none btn mint-button mint-button-wrapper">Mint</button> -->
+              <!-- <crossmint-pay-button
+                clientId="58de2edc-80ec-4389-a3cd-cad877416698"
+                mintConfig='{
+                  "type":"wen-mint-erc721a",
+                  "quantity":"1",
+                  "totalPrice":"0.000005",
+                }'
+                environment="staging"
+              /> -->
               <div class="floating">
                 <p>scroll down to read more ↓</p>
               </div>
@@ -222,15 +249,14 @@
           />
           <div data-aos="fade-left" data-aos-duration="1000">
             <h2>
-              Goal # 1: From selling out, donate £100,000 to two charities in
+              Goal # 1: Donate 70% of the money raised at mint to 2 charities in
               the UK
             </h2>
             <p>
-              At 25% sellout, we will donate £25,000 to a reputable charity
-              organisation working to address homelessness in the United
-              Kingdom. At 100% sellout we will donate £75,000 to the winning
-              charity of our community election. Both milestones will be reached
-              by selling our profile picture NFT collection.
+              Upon 25% sellout, we'll donate roughly £25,000 (1/4 of the 70%) to
+              a UK homelessness charity. At 100% sellout, £75,000 (3/4 of the
+              70%) will go to a community-elected charity. These milestones will
+              be achieved through our NFT collection sales.
             </p>
           </div>
         </div>
@@ -246,11 +272,11 @@
           <div data-aos="fade-left" data-aos-duration="1000">
             <h2>Goal # 2: Provide sustained support for charities</h2>
             <p>
-              After our initial donation, we will continue to support different
-              charitable causes by giving them exposure within our community and
-              social media channels. We will also keep contributing financially
-              with funds raised from OpenSea royalties, game nights, digital
-              auctions, and more.
+              Following our initial contribution, we will maintain our
+              commitment to charities, primarily through financial assistance
+              derived from game nights, digital auctions, raffles, OpenSea
+              royalties and. We will also boost these causes' visibility within
+              our community and social media platforms.
             </p>
           </div>
         </div>
@@ -266,10 +292,10 @@
           <div data-aos="fade-left" data-aos-duration="1000">
             <h2>Goal # 3: Create a community you feel proud to belong to</h2>
             <p>
-              Bring together altruistic individuals that enjoy the idea of
-              constantly supporting charities and improving the world. Allow
-              everyone to have a good time, while also providing a community to
-              express creativity and ideas to tackle real issues.
+              Bring together altruistic individuals who enjoy constantly
+              supporting charities and improving the world. Allow everyone to
+              have a good time while providing a community to express creativity
+              and ideas to tackle real issues.
             </p>
           </div>
         </div>
@@ -284,19 +310,23 @@
             class="col-md-6 d-flex justify-content-center align-items-center"
           >
             <p class="mb-4">
-              Caring Creatures is a community started after researching ways of
-              helping the unhoused community in the UK. We aim to bring together
-              passionate individuals wanting to make a positive impact in the
-              United Kingdom. With most of the initial funds raised donated to
-              charities, every NFT purchase helps support those in need.
+              Born from a desire to aid the unhoused in the UK, Caring Creatures
+              has grown into an NFT collection with an expansive charitable
+              vision. We aim to unite individuals with a shared passion for
+              positive impact, as every NFT purchased contributes directly to
+              those in need.
+
               <br /><br />
-              We allow our holders to decide which charities we'll be supporting
-              across a variety of realms. After successfully donating to our
-              initial cause, we are able to pivot to other charities such as
-              Macmillan Cancer Support, British Heart Foundation, Alzheimer's
-              Society, Children in Need, Dementia UK, and more!
+              Most of the initial funds raised are channelled into charity
+              donations, ensuring that our NFT sales translate into real-world
+              impact. By becoming a holder, you have a hand in directing our
+              charitable efforts and derive enduring benefits from contributing
+              to the project. Beyond our initial cause, we are poised to extend
+              our support to various charities, including Macmillan Cancer
+              Support, the British Heart Foundation, Alzheimer's Society,
+              Children in Need, Dementia UK, and beyond!
+
               <br />
-              
             </p>
           </div>
           <div class="col-md-6">
@@ -326,6 +356,9 @@
               <li class="liEx">
                 <img class="w-100 rounded mx-2" src="img/04.png" />
               </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/34.png" />
+              </li>
             </ul>
           </div>
           <div class="w-100">
@@ -338,6 +371,9 @@
               </li>
               <li class="liEx">
                 <img class="w-100 rounded mx-2" src="img/07.png" />
+              </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/24.png" />
               </li>
               <li class="liEx">
                 <img class="w-100 rounded mx-2" src="img/08.png" />
@@ -360,10 +396,16 @@
               <li class="liEx">
                 <img class="w-100 rounded mx-2" src="img/012.png" />
               </li>
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/29.png" />
+              </li>
             </ul>
           </div>
           <div class="w-100">
             <ul class="ul">
+              <li class="liEx">
+                <img class="w-100 rounded mx-2" src="img/13.png" />
+              </li>
               <li class="liEx">
                 <img class="w-100 rounded mx-2" src="img/013.png" />
               </li>
@@ -481,7 +523,7 @@
               <div class="row g-0">
                 <div class="col-md-4">
                   <img
-                    src="utilities/2.png"
+                    src="utilities/6.png"
                     class="img-fluid w-100 card-image"
                     alt="..."
                   />
@@ -608,7 +650,7 @@
         <h1 class="text-center mb-4">TEAM</h1>
         <p class="text-center mb-5 sub">
           Get to know the individuals who make our mission possible.
-          <br>
+          <br />
         </p>
         <div class="card-group mt-3">
           <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
@@ -726,9 +768,9 @@
               <h4 class="card-title">Gian Marcos Cevallos</h4>
               <h5 class="card-title">Game Leader</h5>
               <p class="card-text">
-                Game night organiser for Caring Creatures. Law
-                background. Ready to help with game nights and ensure fair play
-                and correct resolutions for all parties involved in our events.
+                Game night organiser for Caring Creatures. Law background. Ready
+                to help with game nights and ensure fair play and correct
+                resolutions for all parties involved in our events.
               </p>
             </div>
             <div class="card-footer mx-3 my-3 d-flex align-items-center">
@@ -797,103 +839,102 @@
               </button>
             </div>
           </div>
-          <div
-              data-aos="fade-right"
-              data-aos-duration="1000"
-              class="card mx-3"
-            >
-              <img src="team/316.png" class="card-img-top" alt="Founder" />
-              <div class="card-body">
-                <h4 class="card-title">Nonofo Ledimo</h4>
-                <h5 class="card-title">Legal Advisor</h5>
-                <p class="card-text">
-                  Legal Advisor for Caring Creatures. Bristol-based law student.
-                  Responsible for ensuring that the organisation addresses all
-                  legal aspects, maintains compliance with United Kingdom laws,
-                  and operates within the appropriate jurisdiction.
-                </p>
-              </div>
-              <div class="card-footer mx-3 my-3 d-flex align-items-center">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/nonofo-ledimo-541913210/"
-                  ><img style="width: 30px" src="icons/linkedin-icon.png"
-                /></a>
-                <button
-                  id="label-circle-nonofo"
-                  onclick="changeImage(id)"
-                  class="tag border-yellow"
-                >
-                  No remuneration
-                </button>
-              </div>
+          <div data-aos="fade-right" data-aos-duration="1000" class="card mx-3">
+            <img src="team/316.png" class="card-img-top" alt="Founder" />
+            <div class="card-body">
+              <h4 class="card-title">Nonofo Ledimo</h4>
+              <h5 class="card-title">Legal Advisor</h5>
+              <p class="card-text">
+                Legal Advisor for Caring Creatures. Bristol-based law student.
+                Responsible for ensuring that the organisation addresses all
+                legal aspects, maintains compliance with United Kingdom laws,
+                and operates within the appropriate jurisdiction.
+              </p>
             </div>
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/nonofo-ledimo-541913210/"
+                ><img style="width: 30px" src="icons/linkedin-icon.png"
+              /></a>
+              <button
+                id="label-circle-nonofo"
+                onclick="changeImage(id)"
+                class="tag border-yellow"
+              >
+                No remuneration
+              </button>
+            </div>
+          </div>
         </div>
         <div class="card-group mt-3 justify-content-center last-row">
           <!-- <div class="last-row"> -->
-            <div
-              data-aos="fade-right"
-              data-aos-duration="1000"
-              class="card w-50 mx-3"
-            >
-              <img src="team/298.png" class="card-img-top" alt="Founder" />
-              <div class="card-body">
-                <h4 class="card-title">Nathalie Emanuele</h4>
-                <h5 class="card-title">Marketing Advisor</h5>
-                <p class="card-text">
-                  Marketing Advisor for Caring Creatures. Marketing background,
-                  MBA Graduate. Analyse and curate social media content and
-                  strategies used by the social media designer and community
-                  manager.
-                </p>
-              </div>
-              <div class="card-footer mx-3 my-3 d-flex align-items-center">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/nathalieemanuele"
-                  ><img style="width: 30px" src="icons/linkedin-icon.png"
-                /></a>
-                <button
-                  id="label-circle-nat"
-                  onclick="changeImage(id)"
-                  class="tag border-yellow"
-                >
-                  No remuneration
-                </button>
-              </div>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            class="card w-50 mx-3"
+          >
+            <img src="team/298.png" class="card-img-top" alt="Founder" />
+            <div class="card-body">
+              <h4 class="card-title">Nathalie Emanuele</h4>
+              <h5 class="card-title">Marketing Advisor</h5>
+              <p class="card-text">
+                Marketing Advisor for Caring Creatures. Marketing background,
+                MBA Graduate. Analyse and curate social media content and
+                strategies used by the social media designer and community
+                manager.
+              </p>
             </div>
-            <div
-              data-aos="fade-right"
-              data-aos-duration="1000"
-              class="card w-50 mx-3"
-            >
-              <img src="team/804.png" class="card-img-top" alt="Founder" />
-              <div class="card-body">
-                <h4 class="card-title">Layla Novo</h4>
-                <h5 class="card-title">Video Editor</h5>
-                <p class="card-text">
-                  Video Editor for Caring Creatures. Digital Media background. Extremely interested in animation and video editing. Excels at collaborating and cooperating within a team alongside having key leadership skills to motivate and manage a variety of tasks, such as the creation of audiovisual content for this collection.
-                </p>
-              </div>
-              <div class="card-footer mx-3 my-3 d-flex align-items-center">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/nathalieemanuele"
-                  ><img style="width: 30px" src="icons/linkedin-icon.png"
-                /></a>
-                <button
-                  id="label-circle-lay"
-                  onclick="changeImage(id)"
-                  class="tag border-yellow"
-                >
-                  No remuneration
-                </button>
-              </div>
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/nathalieemanuele"
+                ><img style="width: 30px" src="icons/linkedin-icon.png"
+              /></a>
+              <button
+                id="label-circle-nat"
+                onclick="changeImage(id)"
+                class="tag border-yellow"
+              >
+                No remuneration
+              </button>
             </div>
-            
+          </div>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            class="card w-50 mx-3"
+          >
+            <img src="team/804.png" class="card-img-top" alt="Founder" />
+            <div class="card-body">
+              <h4 class="card-title">Layla Novo</h4>
+              <h5 class="card-title">Video Editor</h5>
+              <p class="card-text">
+                Video Editor for Caring Creatures. Digital Media background.
+                Extremely interested in animation and video editing. Excels at
+                collaborating and cooperating within a team alongside having key
+                leadership skills to motivate and manage a variety of tasks,
+                such as the creation of audiovisual content for this collection.
+              </p>
+            </div>
+            <div class="card-footer mx-3 my-3 d-flex align-items-center">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/nathalieemanuele"
+                ><img style="width: 30px" src="icons/linkedin-icon.png"
+              /></a>
+              <button
+                id="label-circle-lay"
+                onclick="changeImage(id)"
+                class="tag border-yellow"
+              >
+                No remuneration
+              </button>
+            </div>
+          </div>
+
           <!-- </div> -->
         </div>
-       
       </section>
 
       <!-- Roadmap Section -->
@@ -916,12 +957,12 @@
         <p class="text-center mb-5 sub">
           How we are planning to use the funds raised from the mint
         </p>
-        
-       <div class="pieImage text-center">
+
+        <div class="pieImage text-center">
           <h3 class="blue">Charity Donations</h3>
           <p>
-            25K at 25% sellout<br />
-            75K at 100% sellout
+            ≈25K at 25% sellout<br />
+            ≈75K at 100% sellout
           </p>
           <h3 class="pink">Project Development</h3>
           <p>
@@ -932,10 +973,10 @@
           <h3 class="yellow yellow1">Costs and Salaries</h3>
           <p>
             Team Salaries <br />Smart Contract Deployment <br />Web Hosting
-            <br />Ledger Nano X <br />Web Domains <br />Marketing
+            <br />Web Domains <br />Marketing
           </p>
-       </div>
-               
+        </div>
+
         <div class="d-flex justify-content-center">
           <div id="pie" style="width: 900px; height: 700px"></div>
           <img id="pie-img" class="img-fluid pieImage" src="img/pie.png" />
@@ -1322,7 +1363,7 @@
             {
               value: 70,
               name: "Charity Donations",
-              msg: `• 25K at 25% sellout<br>• 75K at 100% sellout`,
+              msg: `• ≈25K at 25% sellout<br>• ≈75K at 100% sellout`,
             },
             {
               value: 15,
@@ -1335,7 +1376,6 @@
               msg: `• Team Salaries
         <br>• Smart Contract Deployment
         <br>• Web Hosting
-        <br>• Ledger Nano X
         <br>• Web Domains
         <br>• Marketing`,
             },
