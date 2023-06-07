@@ -1,40 +1,70 @@
-// function updateTimer() {
-//   const countdownDate = new Date("2023-04-16T11:00:00").getTime();
-//   const now = new Date().getTime();
-//   const distance = countdownDate - now;
+function updateTimer() {
+  const countdownDate = new Date("2023-06-08T13:00:00").getTime();
+  const now = new Date().getTime();
+  const distance = countdownDate - now;
 
-//   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-//   const hours = Math.floor(
-//     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-//   );
-//   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-//   document.querySelector(".days").innerHTML = days + " <span>Days</span>";
-//   document.querySelector(".hours").innerHTML = hours + " <span>Hours</span>";
-//   document.querySelector(".minutes").innerHTML =
-//     minutes + " <span>Minutes</span>";
-//   document.querySelector(".seconds").innerHTML =
-//     seconds + " <span>Seconds</span>";
+  document.querySelector(".days").innerHTML = days + " <span>Days</span>";
+  document.querySelector(".hours").innerHTML = hours + " <span>Hours</span>";
+  document.querySelector(".minutes").innerHTML =
+    minutes + " <span>Minutes</span>";
+  document.querySelector(".seconds").innerHTML =
+    seconds + " <span>Seconds</span>";
 
-//   if (distance < 0) {
-//     clearInterval(timerInterval);
-//     document.querySelector("#timer").innerHTML = "The event has started!";
-//   }
-// }
-
-// updateTimer();
-// const timerInterval = setInterval(updateTimer, 1000);
-
-function updatePriceLabel(value) {
-  document.getElementById("priceLabel").innerText = value + " ETH";
+  if (distance < 0) {
+    clearInterval(timerInterval);
+    document.querySelector("#timer").innerHTML = "The event has started!";
+  }
 }
 
-function updateQuantityLabel(value) {
+updateTimer();
+const timerInterval = setInterval(updateTimer, 1000);
+
+function updatePriceLabel(value, ethPrice) {
+  document.getElementById("priceLabel").innerText = value + " ETH";
+  let qty = document.getElementById("nftQuantity").value;
+
+  let mintConfigObj = {
+    type: "erc-721",
+    totalPrice: value.toString(),
+    quantity: qty
+  }
+  let mintConfigJson = JSON.stringify(mintConfigObj);
+
+  // finally update the button config
+  document.getElementById('xmint-btn').setAttribute('mintConfig', mintConfigJson);
+  document.getElementById('totalToPay').textContent = `${Number(qty*value).toFixed(3)} ETH (£${Number(ethPrice*qty*value).toFixed(2)})`
+
+}
+
+function updateQuantityLabel(value, ethPrice) {
   document.getElementById("quantityLabel").innerText =
     value + " NFT" + (value > 1 ? "s" : "");
+  let price = document.getElementById("mintPrice").value;
+
+    let mintConfigObj = {
+      type: "erc-721",
+      totalPrice: price,
+      quantity: value.toString()
+    }
+    let mintConfigJson = JSON.stringify(mintConfigObj);
+  
+    // finally update the button config
+    document.getElementById('xmint-btn').setAttribute('mintConfig', mintConfigJson);
+    document.getElementById('totalToPay').textContent = `${Number(price*value).toFixed(3)} ETH (£${Number(ethPrice*price*value).toFixed(2)})`
+
 }
 
+function updateTotalQ(price){
+  const quanitity = document.getElementById('mintPrice').value;
+  document.getElementById("total").innerText = (price * quanitity) + 'ETH';
+}
 // Connect to MetaMask
 // async function connectMetaMask() {
 //   if (window.ethereum) {
