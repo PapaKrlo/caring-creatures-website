@@ -194,10 +194,10 @@ h6 {
   height: max-content;
 }
 .mint-button-wrapper {
-  cursor: not-allowed;
+  cursor: pointer;
 }
 .mint-button {
-  pointer-events: none !important;
+  /* pointer-events: none !important; */
 
   background-color: #f18805;
   font-size: large;

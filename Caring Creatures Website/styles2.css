@@ -193,10 +193,10 @@
     height: max-content;
   }
   .mint-button-wrapper {
-    cursor: not-allowed;
+    cursor: pointer;
   }
   .mint-button {
-    pointer-events: none !important;
+    /* pointer-events: none !important; */
   
     background-color: #0e77fa;
     font-size: large;

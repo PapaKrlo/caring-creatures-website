@@ -13,7 +13,7 @@
   font-weight: normal;
 }
 @font-face {
-  font-family: "ProfontWindows";
+  font-family: "ProfontWindowsB";
   src: url("./fonts/ProfontwindowsBold-Eaq14") format("opentype");
   font-weight: bold;
 }
@@ -53,6 +53,10 @@ body {
 h1 {
   font-size: 2rem;
   color: #f5e9e2;
+}
+label{
+  font-family: var(--secondary-font);
+  font-size: large;
 }
 h2 {
   font-size: 2.5rem;
@@ -111,6 +115,9 @@ h6 {
   }
 }
 @media only screen and (max-width: 767px) {
+  body{
+    overflow-x: hidden;
+  }
   .sec {
     width: 100%;
   }
@@ -120,6 +127,7 @@ h6 {
   .a2 {
     display: none;
   }
+ 
 }
 
 .ul {
@@ -163,4 +171,19 @@ h6 {
   margin: 0.5rem;
   margin-top: 0.4rem;
   padding-bottom: 0.6rem;
+}
+.text-progress{
+  padding-top: 1.3rem;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.modal-content {
+  background-color: #464748 !important;
+}
+.btn-modal{
+  font-family: var(--secondary-font);
 }

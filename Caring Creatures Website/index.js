@@ -1,5 +1,5 @@
 function updateTimer() {
-  const countdownDate = new Date("2023-06-08T13:00:00").getTime();
+  const countdownDate = new Date("2023-06-08T14:00:00").getTime();
   const now = new Date().getTime();
   const distance = countdownDate - now;
 
@@ -32,14 +32,14 @@ function updatePriceLabel(value, ethPrice) {
 
   let mintConfigObj = {
     type: "erc-721",
-    totalPrice: value.toString(),
+    totalPrice: Number(qty*value).toFixed(3),
     quantity: qty
   }
   let mintConfigJson = JSON.stringify(mintConfigObj);
 
   // finally update the button config
   document.getElementById('xmint-btn').setAttribute('mintConfig', mintConfigJson);
-  document.getElementById('totalToPay').textContent = `${Number(qty*value).toFixed(3)} ETH (£${Number(ethPrice*qty*value).toFixed(2)})`
+  document.getElementById('totalToPay').textContent = `${Number(qty*value).toFixed(3)} ETH`
 
 }
 
@@ -50,14 +50,14 @@ function updateQuantityLabel(value, ethPrice) {
 
     let mintConfigObj = {
       type: "erc-721",
-      totalPrice: price,
+      totalPrice: Number(price*value).toFixed(3),
       quantity: value.toString()
     }
     let mintConfigJson = JSON.stringify(mintConfigObj);
   
     // finally update the button config
     document.getElementById('xmint-btn').setAttribute('mintConfig', mintConfigJson);
-    document.getElementById('totalToPay').textContent = `${Number(price*value).toFixed(3)} ETH (£${Number(ethPrice*price*value).toFixed(2)})`
+    document.getElementById('totalToPay').textContent = `${Number(price*value).toFixed(3)} ETH`
 
 }
 
