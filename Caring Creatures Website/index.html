@@ -151,24 +151,24 @@
               >
                 <img src="icons/instagram-icon.png" />
               </a>
-              <!-- <a
-                href="https://instagram.com/yourinstagramhandle"
+              <a
+                href="https://opensea.io/collection/caring-creatures-club"
                 target="_blank"
                 class="mx-2"
               >
                 <img src="icons/opensea-icon.png" />
-              </a> -->
-              <!-- <a
-                href="https://etherscan.io/address/yourcontractaddress"
+              </a>
+              <a
+                href="https://etherscan.io/address/0x993b1f0de72a188207d5cb58e27d6e5050d1ad69"
                 target="_blank"
                 class="mx-2"
               >
                 <img src="icons/etherscan-icon.png" />
-              </a> -->
+              </a>
             </div>
-            <div class="mint-button-wrapper">
-              <button class="btn mint-button-sm">Mint</button>
-            </div>
+            <!-- <div class="mint-button-wrapper"> -->
+              <button onclick="location.href='/mint';" class="btn mint-button-sm">Mint</button>
+            <!-- </div> -->
           </div>
         </div>
       </header>
@@ -181,15 +181,16 @@
             <h1>CARING CREATURES</h1>
             <p>Join our philanthropic community and explore our goals!</p>
             <div id="timer" class="d-flex justify-content-start mt-3">
-              <div class="days"></div>
-              <div class="hours"></div>
-              <div class="minutes"></div>
-              <div class="seconds"></div>
+              <div class="days">0 days</div>
+              <div class="hours">0 hours</div>
+              <div class="minutes">0 minutes</div>
+              <div class="seconds">0 seconds</div>
             </div>
             <br />
             <div class="d-flex mint-button-mobile mt-2">
               <div>
-                <!-- <button onclick="location.href='/mint';" class="btn mint-button mint-button-wrapper">Mint</button> -->
+                <button onclick="location.href='/mint';" class="btn mint-button mint-button-wrapper">Mint</button>
+              
                 <div class="floating pt-5">
                   <p>scroll down to read more ↓</p>
                 </div>
@@ -270,7 +271,7 @@
             <p>
               Following our initial contribution, we will maintain our
               commitment to charities, primarily through financial assistance
-              derived from game nights, digital auctions, raffles, and OpenSea
+              derived from game nights, digital auctions, and OpenSea
               royalties. We will also boost these causes' visibility within
               our community and social media platforms.
             </p>
@@ -489,7 +490,7 @@
                     <h4 class="card-title">ONLINE GAME NIGHTS</h4>
                     <p class="card-text">
                       Connect with fellow Caring Creatures holders in fun
-                      virtual events like poker nights and chess tournaments.
+                      virtual events like Catan and chess tournaments.
                       Compete for exclusive prizes, including Caring Creatures
                       postcards, physical art pieces, and more.
                     </p>
@@ -556,7 +557,7 @@
                 <p>No creature, no copyright, no benefits.</p>
               </div>
             </div>
-            <div class="card mb-3">
+            <!-- <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-4">
                   <img
@@ -577,8 +578,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex">
+            </div> -->
+            <!-- <div class="d-flex">
               <img class="w-25 arrow" src="img/arrow.png" />
               <div>
                 <h5 class="red">Holders:</h5>
@@ -600,7 +601,7 @@
                   extra tickets with their purchase.
                 </p>
               </div>
-            </div>
+            </div> -->
             <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-4">
@@ -674,7 +675,7 @@
               /></a>
               <button
                 id="label-circle-carlos"
-                onclick="changeImage(id)"
+                onclick="changeImage('blue')"
                 class="tag border-blue"
               >
                 % based
@@ -703,7 +704,7 @@
               </a>
               <button
                 id="label-circle-val"
-                onclick="changeImage(id)"
+                onclick="changeImage('blue')"
                 class="tag border-blue"
               >
                 % based
@@ -728,7 +729,7 @@
               /></a>
               <button
                 id="label-circle-emilio"
-                onclick="changeImage(id)"
+                onclick="changeImage('red')"
                 class="tag border-red"
               >
                 Fixed rate
@@ -755,7 +756,7 @@
               /></a>
               <button
                 id="label-circle-mich"
-                onclick="changeImage(id)"
+                onclick="changeImage('red')"
                 class="tag border-red"
               >
                 Fixed rate
@@ -783,7 +784,7 @@
               /></a>
               <button
                 id="label-circle-gian"
-                onclick="changeImage(id)"
+                onclick="changeImage('red')"
                 class="tag border-red"
               >
                 Fixed rate
@@ -810,7 +811,7 @@
               /></a>
               <button
                 id="label-circle-simon"
-                onclick="changeImage(id)"
+                onclick="changeImage('yellow')"
                 class="tag border-yellow"
               >
                 No remuneration
@@ -834,7 +835,7 @@
               /></a>
               <button
                 id="label-circle-lucho"
-                onclick="changeImage(id)"
+                onclick="changeImage('yellow')"
                 class="tag border-yellow"
               >
                 No remuneration
@@ -861,7 +862,7 @@
               /></a>
               <button
                 id="label-circle-nonofo"
-                onclick="changeImage(id)"
+                onclick="changeImage('yellow')"
                 class="tag border-yellow"
               >
                 No remuneration
@@ -895,7 +896,7 @@
               /></a>
               <button
                 id="label-circle-nat"
-                onclick="changeImage(id)"
+                onclick="changeImage('yellow')"
                 class="tag border-yellow"
               >
                 No remuneration
@@ -927,7 +928,7 @@
               /></a>
               <button
                 id="label-circle-lay"
-                onclick="changeImage(id)"
+                onclick="changeImage('yellow')"
                 class="tag border-yellow"
               >
                 No remuneration
@@ -968,7 +969,7 @@
           <h3 class="pink">Project Development</h3>
           <p>
             
-            • NFT Raffles<br>• Game Nights<br>• Art auctions<br>• Community events<br>• Marketing and Promotions
+            • Game Nights<br>• Art auctions<br>• Community events<br>• Marketing and Promotions
           </p>
           <h3 class="yellow yellow1">Costs and Salaries</h3>
           <p>
@@ -1346,7 +1347,20 @@
               >
                 <img src="icons/instagram-icon.png" />
               </a>
-
+              <a
+              href="https://opensea.io/collection/caring-creatures-club"
+              target="_blank"
+              class="mx-2"
+            >
+              <img src="icons/opensea-icon.png" />
+            </a>
+            <a
+              href="https://etherscan.io/address/0x993b1f0de72a188207d5cb58e27d6e5050d1ad69"
+              target="_blank"
+              class="mx-2"
+            >
+              <img src="icons/etherscan-icon.png" />
+            </a>
               <!-- <a
                 href="https://instagram.com/yourinstagramhandle"
                 target="_blank"
@@ -1425,7 +1439,7 @@
   {
     value: 20,
     name: "Project Development",
-    msg: `• NFT Raffles<br>• Game Nights<br>• Art auctions<br>• Community events<br>• Marketing and Promotions`,
+    msg: `• Game Nights<br>• Art auctions<br>• Community events<br>• Marketing and Promotions`,
   },
   {
     value: 20,
@@ -1461,6 +1475,36 @@
     };
 
     option && myChart.setOption(option);
+    // Get the button:
+let mybutton = document.getElementById("btt-button");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+function changeImage(id) {
+  let labels = document.getElementsByClassName(`border-${id}`);
+  for(let i=0; i<labels.length; i++){
+    labels[i].classList.toggle("tag-open")
+    labels[i].classList.toggle("tag")
+
+  }
+  // document.getElementById(id).classList.toggle("tag");
+  // document.getElementById(id).classList.toggle("tag-open");
+}
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script

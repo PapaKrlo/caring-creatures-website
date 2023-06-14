@@ -188,7 +188,21 @@ h6 {
 .greeting {
   margin-top: 75px;
 }
-
+/* #xmint-btn::part(button) { 
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #f18805;
+}
+#xmint-btn::part(button)::after { 
+  content: "MINT";
+  font-family: "ProfontWindows";
+  font-size: 1.3rem;
+  color: black;
+  width: 8rem;
+}
+#xmint-btn::part(contentParagraph) {
+  display: none;
+} */
 .main-image {
   width: 70%;
   height: max-content;
@@ -208,8 +222,12 @@ h6 {
   background-color: #f9a744;
 }
 .mint-button-sm {
-  pointer-events: none !important;
+  /* pointer-events: none !important; */
   background-color: #f18805;
+}
+.mint-button-sm:hover {
+  /* pointer-events: none !important; */
+  background-color: #f9a744;
 }
 #funds{
   background-color: var(--primary-color);

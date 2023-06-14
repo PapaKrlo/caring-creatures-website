@@ -14,8 +14,7 @@
 }
 @font-face {
   font-family: "ProfontWindowsB";
-  src: url("./fonts/ProfontwindowsBold-Eaq14") format("opentype");
-  font-weight: bold;
+  src: url("./fonts/ProfontwindowsBold-Eaq14.ttf") format("opentype");
 }
 :root {
   --primary-color: #2d4a60;
@@ -38,14 +37,21 @@ body {
 #xmint-btn::part(button) { 
   margin-top: 1rem;
   width: 100%;
-  background-color: #2d4a60;
+  background-color: #d95d39;
 }
 #xmint-btn::part(button)::after { 
-  content: "Mint with card";
+  content: "BUY WITH CARD";
+  font-family: var(--secondary-font);
+  font-size: 1.3rem;
+
 }
 #xmint-btn::part(contentParagraph) {
   font-family: var(--primary-font);
   display: none;
+}
+.warning-text{
+  font-size: 1rem;
+  color: #f18805;
 }
 .custom-tooltip {
   font-family: var(--secondary-font);
@@ -114,21 +120,7 @@ h6 {
     transform: translateX(0);
   }
 }
-@media only screen and (max-width: 767px) {
-  body{
-    overflow-x: hidden;
-  }
-  .sec {
-    width: 100%;
-  }
-  .card{
-    padding: 1rem!important;
-  }
-  .a2 {
-    display: none;
-  }
- 
-}
+
 
 .ul {
   display: flex;
@@ -149,7 +141,9 @@ h6 {
     padding: 3rem;
 }
 .mint-button{
+  font-family: "ProfontWindowsB";
   background-color: #f18805;
+  font-size: 1.3rem;
 }
 .mint-button:hover{
   background-color: #bb6c0a;
@@ -186,4 +180,76 @@ h6 {
 }
 .btn-modal{
   font-family: var(--secondary-font);
+}
+.price-btn{
+  background-color: #d95d39;
+  color: white;
+  padding: 1.5rem;
+}
+.price-btn:hover{
+  background-color: #f18805;
+}
+.price-btn:focus{
+  background-color: #f18805;
+}
+.price-btn:active{
+  background-color: #f18805;
+}
+.quantity-input {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.quantity-input-field {
+  width: 50px;
+  text-align: center;
+}
+
+.quantity-button {
+  width: 30px;
+  height: 35px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #d95d39;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 4px;
+  margin-right: 4px;
+
+}
+.quantity-button:hover{
+  background-color: #f18805;
+}
+.disclaimer{
+  font-size: 1.1rem;
+}
+.actived{
+  background-color: #f18805;
+}
+@media only screen and (max-width: 767px) {
+  body{
+    overflow-x: hidden;
+  }
+  .sec {
+    width: 100%;
+  }
+  .card{
+    padding: 1rem!important;
+  }
+  .a2 {
+    display: none;
+  }
+  .price-btn{
+    padding: 1.1rem !important;
+  }
+  .quantity-button {
+    width: 50px;
+    height: 35px;
+  }
+  .disclaimer{
+    font-size: 1rem;
+  }
 }

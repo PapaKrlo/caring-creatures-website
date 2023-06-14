@@ -195,6 +195,21 @@
   .mint-button-wrapper {
     cursor: pointer;
   }
+  #xmint-btn::part(button) { 
+    margin-top: 1rem;
+    width: 100%;
+    background-color: #d95d39;
+  }
+  #xmint-btn::part(button)::after { 
+    content: "MINT";
+    font-family: var(--secondary-font);
+    font-size: 1.3rem;
+  
+  }
+  #xmint-btn::part(contentParagraph) {
+    font-family: var(--primary-font);
+    display: none;
+  }
   .mint-button {
     /* pointer-events: none !important; */
   
@@ -207,8 +222,12 @@
     background-color: #0658c5;
   }
   .mint-button-sm {
-    pointer-events: none !important;
+    /* pointer-events: none !important; */
     background-color: #0e77fa;
+  }
+  .mint-button-sm:hover {
+    /* pointer-events: none !important; */
+    background-color: #186bd0;
   }
   #funds .card{
     background-color: #f4ffe9!important;
